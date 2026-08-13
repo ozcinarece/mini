@@ -1,0 +1,42 @@
+name: eas update
+
+on:
+  push:
+    branches:
+      - main
+      - "deneme/**"
+
+jobs:
+  update:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Node 20 kurulumu
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20
+          cache: npm
+
+      - name: EAS CLI kurulumu
+        uses: expo/expo-github-action@v8
+        with:
+          eas-version: latest
+          token: ${{ secrets.EXPO_TOKEN }}
+
+      - name: Bağımlılıkları kur
+        run: npm ci
+
+      - name: Sürüm uyumluluğunu düzelt
+        run: npx expo install --fix
+
+      # İlk çalışmada expo.dev'de projeyi oluşturur/bağlar (slug: minik).
+      # projectId ve updates.url yalnızca CI çalışma alanına yazılır.
+      - name: EAS projesini bağla
+        run: |
+          eas init --force --non-interactive
+          eas update:configure --non-interactive
+
+      - name: Güncellemeyi yayınla
+        run: eas update --branch preview --auto --non-interactive
