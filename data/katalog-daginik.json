@@ -1,0 +1,1653 @@
+{
+  "surum": "1.0",
+  "arketip": "daginik",
+  "alt_hedefler": {
+    "F01": {
+      "kume_id": "FIZ",
+      "kume": "Fiziksel alan bakımı",
+      "ad": "Ev toplama — genel",
+      "aciklama": "Odaya bakılmaksızın karışık deste; paketin amiral gemisi",
+      "anahtar_kelimeler": [
+        "ev",
+        "topla",
+        "toparla",
+        "dağınık",
+        "düzenle",
+        "derli toplu",
+        "savaş alanı",
+        "ev işi"
+      ],
+      "paket": "MVP",
+      "hafta_hedefi": 10,
+      "kimlik": "evine sahip çıkan",
+      "kartlar": [
+        {
+          "id": "F01-01",
+          "metin": "Gözüne ilişen 5 şeyi yerine koy",
+          "sure_dk": 2,
+          "zorluk": 1,
+          "baglam": "her yer"
+        },
+        {
+          "id": "F01-02",
+          "metin": "Bir yüzeyi tamamen boşalt (sehpa/tezgah fark etmez)",
+          "sure_dk": 2,
+          "zorluk": 2,
+          "baglam": "her yer"
+        },
+        {
+          "id": "F01-03",
+          "metin": "Ortalıkta duran çöpleri topla, poşeti kapıya bırak",
+          "sure_dk": 2,
+          "zorluk": 1,
+          "baglam": "her yer"
+        },
+        {
+          "id": "F01-04",
+          "metin": "Yerdeki her şeyi kaldır — tek oda yeter",
+          "sure_dk": 2,
+          "zorluk": 2,
+          "baglam": "her yer"
+        },
+        {
+          "id": "F01-05",
+          "metin": "Bir 'eve dönmemiş' eşyayı ait olduğu odaya götür x5",
+          "sure_dk": 2,
+          "zorluk": 1,
+          "baglam": "her yer"
+        },
+        {
+          "id": "F01-06",
+          "metin": "Kapı kollarındaki/sandalyedeki asılıları yerine as",
+          "sure_dk": 2,
+          "zorluk": 1,
+          "baglam": "her yer"
+        },
+        {
+          "id": "F01-07",
+          "metin": "Bir çekmeceyi düzenle — sadece bir tane",
+          "sure_dk": 2,
+          "zorluk": 2,
+          "baglam": "her yer"
+        },
+        {
+          "id": "F01-08",
+          "metin": "Su şişesi/bardak turu: hepsini mutfağa taşı",
+          "sure_dk": 2,
+          "zorluk": 1,
+          "baglam": "her yer"
+        },
+        {
+          "id": "F01-09",
+          "metin": "Bir 'sonra bakarım' yığınından 5 parça eksilt",
+          "sure_dk": 2,
+          "zorluk": 3,
+          "baglam": "her yer"
+        },
+        {
+          "id": "F01-10",
+          "metin": "Şarj kablosu turu: ortadakileri topla, yerine sar",
+          "sure_dk": 2,
+          "zorluk": 1,
+          "baglam": "her yer"
+        },
+        {
+          "id": "F01-11",
+          "metin": "Bir rafı boşalt-sil-yerleştir",
+          "sure_dk": 2,
+          "zorluk": 3,
+          "baglam": "her yer"
+        },
+        {
+          "id": "F01-12",
+          "metin": "Zamanlayıcıyı kur: 2 dk boyunca sadece topla, düşünme",
+          "sure_dk": 2,
+          "zorluk": 2,
+          "baglam": "her yer"
+        }
+      ]
+    },
+    "F02": {
+      "kume_id": "FIZ",
+      "kume": "Fiziksel alan bakımı",
+      "ad": "Mutfak",
+      "aciklama": "Tezgah, bulaşık döngüsü, dolap ve buzdolabı mikro bakımı",
+      "anahtar_kelimeler": [
+        "mutfak",
+        "tezgah",
+        "bulaşık",
+        "buzdolabı",
+        "dolap",
+        "ocak"
+      ],
+      "paket": "MVP",
+      "hafta_hedefi": 8,
+      "kimlik": "mutfağına sahip çıkan",
+      "kartlar": [
+        {
+          "id": "F02-01",
+          "metin": "Tezgahı tamamen boşalt ve sil",
+          "sure_dk": 2,
+          "zorluk": 2,
+          "baglam": "mutfak"
+        },
+        {
+          "id": "F02-02",
+          "metin": "Bulaşık makinesini boşalt VEYA doldur (ikisi değil)",
+          "sure_dk": 2,
+          "zorluk": 2,
+          "baglam": "mutfak"
+        },
+        {
+          "id": "F02-03",
+          "metin": "Lavabodaki bulaşıkları makineye/süzgüye taşı",
+          "sure_dk": 2,
+          "zorluk": 1,
+          "baglam": "mutfak"
+        },
+        {
+          "id": "F02-04",
+          "metin": "Buzdolabından tarihi geçmiş 3 şey çıkar",
+          "sure_dk": 2,
+          "zorluk": 2,
+          "baglam": "mutfak"
+        },
+        {
+          "id": "F02-05",
+          "metin": "Bir mutfak çekmecesini düzenle",
+          "sure_dk": 2,
+          "zorluk": 2,
+          "baglam": "mutfak"
+        },
+        {
+          "id": "F02-06",
+          "metin": "Baharat/çay köşesini hizala",
+          "sure_dk": 2,
+          "zorluk": 1,
+          "baglam": "mutfak"
+        },
+        {
+          "id": "F02-07",
+          "metin": "Ocak üstünü sil",
+          "sure_dk": 2,
+          "zorluk": 1,
+          "baglam": "mutfak"
+        },
+        {
+          "id": "F02-08",
+          "metin": "Tezgah bezlerini değiştir, kirliyi sepete at",
+          "sure_dk": 2,
+          "zorluk": 1,
+          "baglam": "mutfak"
+        },
+        {
+          "id": "F02-09",
+          "metin": "Buzdolabı kapağını (raflarını değil) düzenle",
+          "sure_dk": 2,
+          "zorluk": 2,
+          "baglam": "mutfak"
+        },
+        {
+          "id": "F02-10",
+          "metin": "Poşet/saklama kabı dolabına 2 dk çeki düzen",
+          "sure_dk": 2,
+          "zorluk": 3,
+          "baglam": "mutfak"
+        },
+        {
+          "id": "F02-11",
+          "metin": "Çöpü çıkar, yeni poşet tak",
+          "sure_dk": 2,
+          "zorluk": 1,
+          "baglam": "mutfak"
+        },
+        {
+          "id": "F02-12",
+          "metin": "Kettle/kahve makinesi çevresini toparla",
+          "sure_dk": 2,
+          "zorluk": 1,
+          "baglam": "mutfak"
+        }
+      ]
+    },
+    "F03": {
+      "kume_id": "FIZ",
+      "kume": "Fiziksel alan bakımı",
+      "ad": "Salon / oturma odası",
+      "aciklama": "Ortak yaşam alanının gün içi sıfırlaması",
+      "anahtar_kelimeler": [
+        "salon",
+        "oturma odası",
+        "koltuk",
+        "sehpa",
+        "misafir"
+      ],
+      "paket": "MVP",
+      "hafta_hedefi": 6,
+      "kimlik": "yaşam alanını seven",
+      "kartlar": [
+        {
+          "id": "F03-01",
+          "metin": "Koltuk minderlerini düzelt, örtüyü kat",
+          "sure_dk": 2,
+          "zorluk": 1,
+          "baglam": "salon"
+        },
+        {
+          "id": "F03-02",
+          "metin": "Sehpayı tamamen boşalt",
+          "sure_dk": 2,
+          "zorluk": 1,
+          "baglam": "salon"
+        },
+        {
+          "id": "F03-03",
+          "metin": "Salondaki 'başka odanın eşyası'nı evine götür x5",
+          "sure_dk": 2,
+          "zorluk": 1,
+          "baglam": "salon"
+        },
+        {
+          "id": "F03-04",
+          "metin": "Kumandaları/kabloları tek noktaya topla",
+          "sure_dk": 2,
+          "zorluk": 1,
+          "baglam": "salon"
+        },
+        {
+          "id": "F03-05",
+          "metin": "Bir raf/dolap gözüne 2 dk düzen",
+          "sure_dk": 2,
+          "zorluk": 2,
+          "baglam": "salon"
+        },
+        {
+          "id": "F03-06",
+          "metin": "Yerdeki oyuncak/eşyaları sepete süpür",
+          "sure_dk": 2,
+          "zorluk": 1,
+          "baglam": "salon"
+        },
+        {
+          "id": "F03-07",
+          "metin": "Battaniyeleri katla, tek yere koy",
+          "sure_dk": 2,
+          "zorluk": 1,
+          "baglam": "salon"
+        },
+        {
+          "id": "F03-08",
+          "metin": "Bardak-tabak turu: mutfağa taşı",
+          "sure_dk": 2,
+          "zorluk": 1,
+          "baglam": "salon"
+        },
+        {
+          "id": "F03-09",
+          "metin": "Bitkilere bak: kuru yaprak al, gerekiyorsa su",
+          "sure_dk": 2,
+          "zorluk": 1,
+          "baglam": "salon"
+        },
+        {
+          "id": "F03-10",
+          "metin": "Pencere önü/denizlik turu: fazlalıkları kaldır",
+          "sure_dk": 2,
+          "zorluk": 2,
+          "baglam": "salon"
+        }
+      ]
+    },
+    "F04": {
+      "kume_id": "FIZ",
+      "kume": "Fiziksel alan bakımı",
+      "ad": "Yatak odası",
+      "aciklama": "Yatak, komodin, kıyafet sandalyesi",
+      "anahtar_kelimeler": [
+        "yatak odası",
+        "yatak",
+        "komodin",
+        "sandalyedeki kıyafet"
+      ],
+      "paket": "MVP",
+      "hafta_hedefi": 5,
+      "kimlik": "odasını huzurlu tutan",
+      "kartlar": [
+        {
+          "id": "F04-01",
+          "metin": "Yatağı düzelt",
+          "sure_dk": 2,
+          "zorluk": 1,
+          "baglam": "yatak odası"
+        },
+        {
+          "id": "F04-02",
+          "metin": "Sandalyedeki kıyafet yığınından 5 parça: as ya da sepete",
+          "sure_dk": 2,
+          "zorluk": 2,
+          "baglam": "yatak odası"
+        },
+        {
+          "id": "F04-03",
+          "metin": "Komodinin üstünü boşalt-sil",
+          "sure_dk": 2,
+          "zorluk": 1,
+          "baglam": "yatak odası"
+        },
+        {
+          "id": "F04-04",
+          "metin": "Yerdeki kıyafetleri topla: kirli sepete, temizler dolaba",
+          "sure_dk": 2,
+          "zorluk": 2,
+          "baglam": "yatak odası"
+        },
+        {
+          "id": "F04-05",
+          "metin": "Bir çekmeceyi hizala",
+          "sure_dk": 2,
+          "zorluk": 2,
+          "baglam": "yatak odası"
+        },
+        {
+          "id": "F04-06",
+          "metin": "Yatak altına bir bakış: oradan 3 şey çıkar",
+          "sure_dk": 2,
+          "zorluk": 3,
+          "baglam": "yatak odası"
+        },
+        {
+          "id": "F04-07",
+          "metin": "Şifonyerin üstünü toparla",
+          "sure_dk": 2,
+          "zorluk": 1,
+          "baglam": "yatak odası"
+        },
+        {
+          "id": "F04-08",
+          "metin": "Yastık/nevresim değişim turu (sadece yastık kılıfları)",
+          "sure_dk": 2,
+          "zorluk": 2,
+          "baglam": "yatak odası"
+        }
+      ]
+    },
+    "F05": {
+      "kume_id": "FIZ",
+      "kume": "Fiziksel alan bakımı",
+      "ad": "Banyo",
+      "aciklama": "Lavabo çevresi, ürün düzeni, havlu döngüsü",
+      "anahtar_kelimeler": [
+        "banyo",
+        "lavabo",
+        "duş",
+        "havlu",
+        "kozmetik"
+      ],
+      "paket": "MVP",
+      "hafta_hedefi": 4,
+      "kimlik": "banyosunu ferah tutan",
+      "kartlar": [
+        {
+          "id": "F05-01",
+          "metin": "Lavabo tezgahını boşalt-sil",
+          "sure_dk": 2,
+          "zorluk": 1,
+          "baglam": "banyo"
+        },
+        {
+          "id": "F05-02",
+          "metin": "Duşta biten/boş şişeleri ayıkla",
+          "sure_dk": 2,
+          "zorluk": 1,
+          "baglam": "banyo"
+        },
+        {
+          "id": "F05-03",
+          "metin": "Havluları değiştir, kirlileri sepete",
+          "sure_dk": 2,
+          "zorluk": 1,
+          "baglam": "banyo"
+        },
+        {
+          "id": "F05-04",
+          "metin": "Aynayı sil",
+          "sure_dk": 2,
+          "zorluk": 1,
+          "baglam": "banyo"
+        },
+        {
+          "id": "F05-05",
+          "metin": "Bir banyo çekmecesi/dolabı gözü düzenle",
+          "sure_dk": 2,
+          "zorluk": 2,
+          "baglam": "banyo"
+        },
+        {
+          "id": "F05-06",
+          "metin": "Süresi geçmiş kozmetikten 3 tane çıkar",
+          "sure_dk": 2,
+          "zorluk": 2,
+          "baglam": "banyo"
+        },
+        {
+          "id": "F05-07",
+          "metin": "Deterjan/temizlik köşesini hizala",
+          "sure_dk": 2,
+          "zorluk": 2,
+          "baglam": "banyo"
+        },
+        {
+          "id": "F05-08",
+          "metin": "Klozet çevresi hızlı tur",
+          "sure_dk": 2,
+          "zorluk": 2,
+          "baglam": "banyo"
+        }
+      ]
+    },
+    "F06": {
+      "kume_id": "FIZ",
+      "kume": "Fiziksel alan bakımı",
+      "ad": "Bebek / çocuk odası",
+      "aciklama": "Oyuncak toplama ve bebek eşyası döngüsü",
+      "anahtar_kelimeler": [
+        "bebek",
+        "çocuk odası",
+        "oyuncak",
+        "zıbın",
+        "bez"
+      ],
+      "paket": "MVP",
+      "hafta_hedefi": 6,
+      "kimlik": "bebeğine düzenli bir yuva kuran",
+      "kartlar": [
+        {
+          "id": "F06-01",
+          "metin": "Oyuncakları kutusuna süpür — bebek de katılabilir",
+          "sure_dk": 2,
+          "zorluk": 1,
+          "baglam": "çocuk odası"
+        },
+        {
+          "id": "F06-02",
+          "metin": "Küçülen kıyafetlerden 5 parça ayır",
+          "sure_dk": 2,
+          "zorluk": 2,
+          "baglam": "çocuk odası"
+        },
+        {
+          "id": "F06-03",
+          "metin": "Bez/bakım istasyonunu tamamla (bez, ıslak mendil, krem)",
+          "sure_dk": 2,
+          "zorluk": 1,
+          "baglam": "çocuk odası"
+        },
+        {
+          "id": "F06-04",
+          "metin": "Kitapları rafa diz",
+          "sure_dk": 2,
+          "zorluk": 1,
+          "baglam": "çocuk odası"
+        },
+        {
+          "id": "F06-05",
+          "metin": "Kirli zıbınları sepete, temizleri çekmeceye",
+          "sure_dk": 2,
+          "zorluk": 1,
+          "baglam": "çocuk odası"
+        },
+        {
+          "id": "F06-06",
+          "metin": "Yer matı/oyun alanını sıfırla",
+          "sure_dk": 2,
+          "zorluk": 1,
+          "baglam": "çocuk odası"
+        },
+        {
+          "id": "F06-07",
+          "metin": "Bir oyuncak kutusunu ayıkla: kırık/eksikleri çıkar",
+          "sure_dk": 2,
+          "zorluk": 3,
+          "baglam": "çocuk odası"
+        },
+        {
+          "id": "F06-08",
+          "metin": "Yarın çantası: bez çantasını şimdiden hazırla",
+          "sure_dk": 2,
+          "zorluk": 2,
+          "baglam": "çocuk odası"
+        }
+      ]
+    },
+    "F07": {
+      "kume_id": "FIZ",
+      "kume": "Fiziksel alan bakımı",
+      "ad": "Çalışma masası / home-office",
+      "aciklama": "Masa üstü, kablolar, not kağıtları",
+      "anahtar_kelimeler": [
+        "çalışma masası",
+        "masa",
+        "ofis",
+        "home office",
+        "kablo",
+        "klavye"
+      ],
+      "paket": "MVP",
+      "hafta_hedefi": 4,
+      "kimlik": "masasını hazır tutan",
+      "kartlar": [
+        {
+          "id": "F07-01",
+          "metin": "Masa üstünü tamamen boşalt (laptop hariç)",
+          "sure_dk": 2,
+          "zorluk": 2,
+          "baglam": "masa"
+        },
+        {
+          "id": "F07-02",
+          "metin": "Kağıt/not yığınından 5 parça: ya dosyala ya at",
+          "sure_dk": 2,
+          "zorluk": 2,
+          "baglam": "masa"
+        },
+        {
+          "id": "F07-03",
+          "metin": "Kabloları topla, birini düzenle",
+          "sure_dk": 2,
+          "zorluk": 1,
+          "baglam": "masa"
+        },
+        {
+          "id": "F07-04",
+          "metin": "Kalemlik ayıkla: yazmayanları at",
+          "sure_dk": 2,
+          "zorluk": 1,
+          "baglam": "masa"
+        },
+        {
+          "id": "F07-05",
+          "metin": "Bardak/kupa turu: mutfağa",
+          "sure_dk": 2,
+          "zorluk": 1,
+          "baglam": "masa"
+        },
+        {
+          "id": "F07-06",
+          "metin": "Bir masa çekmecesi düzenle",
+          "sure_dk": 2,
+          "zorluk": 2,
+          "baglam": "masa"
+        },
+        {
+          "id": "F07-07",
+          "metin": "Klavye-ekran sil",
+          "sure_dk": 2,
+          "zorluk": 1,
+          "baglam": "masa"
+        },
+        {
+          "id": "F07-08",
+          "metin": "Yarının ilk işini yapışkan nota yaz, ekrana yapıştır",
+          "sure_dk": 2,
+          "zorluk": 1,
+          "baglam": "masa"
+        }
+      ]
+    },
+    "F08": {
+      "kume_id": "FIZ",
+      "kume": "Fiziksel alan bakımı",
+      "ad": "Giysi dolabı",
+      "aciklama": "Askı düzeni, mevsim ayıklama, çekmeceler",
+      "anahtar_kelimeler": [
+        "dolap",
+        "gardırop",
+        "askı",
+        "kıyafet",
+        "mevsim",
+        "çekmece"
+      ],
+      "paket": "2.dalga",
+      "hafta_hedefi": 4,
+      "kimlik": "dolabına hakim",
+      "kartlar": [
+        {
+          "id": "F08-01",
+          "metin": "Askıdan düşenleri geri as x5",
+          "sure_dk": 2,
+          "zorluk": 1,
+          "baglam": "dolap"
+        },
+        {
+          "id": "F08-02",
+          "metin": "Bir çekmeceyi kat-hizala",
+          "sure_dk": 2,
+          "zorluk": 2,
+          "baglam": "dolap"
+        },
+        {
+          "id": "F08-03",
+          "metin": "Giymediğin 3 parçayı 'bağış' torbasına ayır",
+          "sure_dk": 2,
+          "zorluk": 3,
+          "baglam": "dolap"
+        },
+        {
+          "id": "F08-04",
+          "metin": "Mevsim dışı 5 parçayı üst rafa taşı",
+          "sure_dk": 2,
+          "zorluk": 2,
+          "baglam": "dolap"
+        },
+        {
+          "id": "F08-05",
+          "metin": "Çorap/iç çamaşırı çekmecesine 2 dk",
+          "sure_dk": 2,
+          "zorluk": 2,
+          "baglam": "dolap"
+        },
+        {
+          "id": "F08-06",
+          "metin": "Ayakkabıları çiftle, kutusuna/rafına",
+          "sure_dk": 2,
+          "zorluk": 1,
+          "baglam": "dolap"
+        },
+        {
+          "id": "F08-07",
+          "metin": "Çanta içlerinden birini boşalt",
+          "sure_dk": 2,
+          "zorluk": 2,
+          "baglam": "dolap"
+        },
+        {
+          "id": "F08-08",
+          "metin": "Kemer-eşarp-aksesuar köşesini hizala",
+          "sure_dk": 2,
+          "zorluk": 1,
+          "baglam": "dolap"
+        }
+      ]
+    },
+    "F09": {
+      "kume_id": "FIZ",
+      "kume": "Fiziksel alan bakımı",
+      "ad": "Antre & ayakkabılık",
+      "aciklama": "Giriş alanı, ayakkabı, anahtar-çanta noktası",
+      "anahtar_kelimeler": [
+        "antre",
+        "giriş",
+        "ayakkabı",
+        "ayakkabılık",
+        "mont",
+        "anahtar"
+      ],
+      "paket": "2.dalga",
+      "hafta_hedefi": 3,
+      "kimlik": "girişi karşılamaya hazır tutan",
+      "kartlar": [
+        {
+          "id": "F09-01",
+          "metin": "Ayakkabıları çiftle ve rafa diz",
+          "sure_dk": 2,
+          "zorluk": 1,
+          "baglam": "antre"
+        },
+        {
+          "id": "F09-02",
+          "metin": "Askıdaki fazla montlardan 3'ünü dolaba kaldır",
+          "sure_dk": 2,
+          "zorluk": 2,
+          "baglam": "antre"
+        },
+        {
+          "id": "F09-03",
+          "metin": "Anahtar-cüzdan-maske noktasını sıfırla",
+          "sure_dk": 2,
+          "zorluk": 1,
+          "baglam": "antre"
+        },
+        {
+          "id": "F09-04",
+          "metin": "Gelen kutu/koli kartonlarını katla, kapıya koy",
+          "sure_dk": 2,
+          "zorluk": 1,
+          "baglam": "antre"
+        },
+        {
+          "id": "F09-05",
+          "metin": "Antre sehpasını/konsolunu boşalt",
+          "sure_dk": 2,
+          "zorluk": 1,
+          "baglam": "antre"
+        },
+        {
+          "id": "F09-06",
+          "metin": "Poşet yığınını tek poşete indir",
+          "sure_dk": 2,
+          "zorluk": 1,
+          "baglam": "antre"
+        }
+      ]
+    },
+    "F10": {
+      "kume_id": "FIZ",
+      "kume": "Fiziksel alan bakımı",
+      "ad": "Balkon / teras",
+      "aciklama": "Mevsimlik eşya ve bitki bakım mikroları",
+      "anahtar_kelimeler": [
+        "balkon",
+        "teras",
+        "saksı",
+        "bitki"
+      ],
+      "paket": "2.dalga",
+      "hafta_hedefi": 3,
+      "kimlik": "balkonunu yaşatan",
+      "kartlar": [
+        {
+          "id": "F10-01",
+          "metin": "Kuru yaprak turu + bir saksıya su",
+          "sure_dk": 2,
+          "zorluk": 1,
+          "baglam": "balkon"
+        },
+        {
+          "id": "F10-02",
+          "metin": "Balkondaki 'evin eşyası'nı içeri taşı x3",
+          "sure_dk": 2,
+          "zorluk": 1,
+          "baglam": "balkon"
+        },
+        {
+          "id": "F10-03",
+          "metin": "Mandal/ip düzeni: yere düşenleri topla",
+          "sure_dk": 2,
+          "zorluk": 1,
+          "baglam": "balkon"
+        },
+        {
+          "id": "F10-04",
+          "metin": "Bir köşeyi boşalt: oradan 3 şey ya çöpe ya depoya",
+          "sure_dk": 2,
+          "zorluk": 2,
+          "baglam": "balkon"
+        },
+        {
+          "id": "F10-05",
+          "metin": "Masa-sandalye sil",
+          "sure_dk": 2,
+          "zorluk": 1,
+          "baglam": "balkon"
+        },
+        {
+          "id": "F10-06",
+          "metin": "Kırık/boş saksıları ayır",
+          "sure_dk": 2,
+          "zorluk": 2,
+          "baglam": "balkon"
+        }
+      ]
+    },
+    "F11": {
+      "kume_id": "FIZ",
+      "kume": "Fiziksel alan bakımı",
+      "ad": "Kiler / depo / dolap üstü",
+      "aciklama": "Birikmiş saklama alanları — kart bazlı seyreltme",
+      "anahtar_kelimeler": [
+        "kiler",
+        "depo",
+        "kutu",
+        "dolap üstü",
+        "saklama"
+      ],
+      "paket": "2.dalga",
+      "hafta_hedefi": 3,
+      "kimlik": "deposuna hükmeden",
+      "kartlar": [
+        {
+          "id": "F11-01",
+          "metin": "Bir kutuyu aç: 5 karar ver (kalsın/çöp/bağış)",
+          "sure_dk": 2,
+          "zorluk": 3,
+          "baglam": "depo"
+        },
+        {
+          "id": "F11-02",
+          "metin": "Kapı önünü boşalt — girişi aç",
+          "sure_dk": 2,
+          "zorluk": 2,
+          "baglam": "depo"
+        },
+        {
+          "id": "F11-03",
+          "metin": "Etiketle: 2 kutuya ne olduğunu yaz",
+          "sure_dk": 2,
+          "zorluk": 1,
+          "baglam": "depo"
+        },
+        {
+          "id": "F11-04",
+          "metin": "Boş kutu/poşetleri katla, geri dönüşüme",
+          "sure_dk": 2,
+          "zorluk": 1,
+          "baglam": "depo"
+        },
+        {
+          "id": "F11-05",
+          "metin": "Bir rafı hizala",
+          "sure_dk": 2,
+          "zorluk": 2,
+          "baglam": "depo"
+        },
+        {
+          "id": "F11-06",
+          "metin": "'Belki lazım olur'dan 3 şeyi bağış torbasına",
+          "sure_dk": 2,
+          "zorluk": 3,
+          "baglam": "depo"
+        }
+      ]
+    },
+    "F12": {
+      "kume_id": "FIZ",
+      "kume": "Fiziksel alan bakımı",
+      "ad": "Araba içi",
+      "aciklama": "Torpido, koltuk arası, bagaj mikroları",
+      "anahtar_kelimeler": [
+        "araba",
+        "araç",
+        "torpido",
+        "bagaj",
+        "oto"
+      ],
+      "paket": "2.dalga",
+      "hafta_hedefi": 3,
+      "kimlik": "arabasına iyi bakan",
+      "kartlar": [
+        {
+          "id": "F12-01",
+          "metin": "Torpidoyu ayıkla",
+          "sure_dk": 2,
+          "zorluk": 2,
+          "baglam": "araba"
+        },
+        {
+          "id": "F12-02",
+          "metin": "Koltuk arası/kapı gözü çöp turu",
+          "sure_dk": 2,
+          "zorluk": 1,
+          "baglam": "araba"
+        },
+        {
+          "id": "F12-03",
+          "metin": "Bagajdan 'eve dönmemiş' 3 eşyayı çıkar",
+          "sure_dk": 2,
+          "zorluk": 1,
+          "baglam": "araba"
+        },
+        {
+          "id": "F12-04",
+          "metin": "Ön paneli sil",
+          "sure_dk": 2,
+          "zorluk": 1,
+          "baglam": "araba"
+        },
+        {
+          "id": "F12-05",
+          "metin": "Şarj kablosu/tutucu düzeni",
+          "sure_dk": 2,
+          "zorluk": 1,
+          "baglam": "araba"
+        },
+        {
+          "id": "F12-06",
+          "metin": "Bebek koltuğu çevresi kırıntı turu",
+          "sure_dk": 2,
+          "zorluk": 2,
+          "baglam": "araba"
+        }
+      ]
+    },
+    "F13": {
+      "kume_id": "FIZ",
+      "kume": "Fiziksel alan bakımı",
+      "ad": "Çamaşır döngüsü",
+      "aciklama": "Kirli-makine-asma-katlama zincirinin mikro halkaları",
+      "anahtar_kelimeler": [
+        "çamaşır",
+        "makine",
+        "asmak",
+        "katlamak",
+        "ütü"
+      ],
+      "paket": "2.dalga",
+      "hafta_hedefi": 5,
+      "kimlik": "çamaşır döngüsünü döndüren",
+      "kartlar": [
+        {
+          "id": "F13-01",
+          "metin": "Kirlileri makineye at, başlat",
+          "sure_dk": 2,
+          "zorluk": 1,
+          "baglam": "çamaşır"
+        },
+        {
+          "id": "F13-02",
+          "metin": "Makinedekini as — sadece as",
+          "sure_dk": 2,
+          "zorluk": 2,
+          "baglam": "çamaşır"
+        },
+        {
+          "id": "F13-03",
+          "metin": "Kurulardan bir kucak topla, yatağa koy",
+          "sure_dk": 2,
+          "zorluk": 1,
+          "baglam": "çamaşır"
+        },
+        {
+          "id": "F13-04",
+          "metin": "Sadece havluları katla",
+          "sure_dk": 2,
+          "zorluk": 1,
+          "baglam": "çamaşır"
+        },
+        {
+          "id": "F13-05",
+          "metin": "Sadece bebek kıyafetlerini katla",
+          "sure_dk": 2,
+          "zorluk": 1,
+          "baglam": "çamaşır"
+        },
+        {
+          "id": "F13-06",
+          "metin": "Katlanmışları dolaba dağıt",
+          "sure_dk": 2,
+          "zorluk": 2,
+          "baglam": "çamaşır"
+        }
+      ]
+    },
+    "F14": {
+      "kume_id": "FIZ",
+      "kume": "Fiziksel alan bakımı",
+      "ad": "Hobi alanı / atölye",
+      "aciklama": "Craft-3D baskı-el işi alan bakımı (filament, alet, artık)",
+      "anahtar_kelimeler": [
+        "atölye",
+        "hobi",
+        "3d",
+        "filament",
+        "baskı",
+        "boya",
+        "malzeme"
+      ],
+      "paket": "LLM",
+      "hafta_hedefi": 3,
+      "kimlik": "atölyesini üretime hazır tutan",
+      "kartlar": [
+        {
+          "id": "F14-01",
+          "metin": "Masadaki artık/çapak turu: hepsi çöpe",
+          "sure_dk": 2,
+          "zorluk": 1,
+          "baglam": "atölye"
+        },
+        {
+          "id": "F14-02",
+          "metin": "Filamentleri/malzemeyi rafına kaldır",
+          "sure_dk": 2,
+          "zorluk": 1,
+          "baglam": "atölye"
+        },
+        {
+          "id": "F14-03",
+          "metin": "Aletleri yerine as/koy x5",
+          "sure_dk": 2,
+          "zorluk": 1,
+          "baglam": "atölye"
+        },
+        {
+          "id": "F14-04",
+          "metin": "Bitmiş işleri 'hazır' kutusuna taşı",
+          "sure_dk": 2,
+          "zorluk": 1,
+          "baglam": "atölye"
+        },
+        {
+          "id": "F14-05",
+          "metin": "Bir malzeme kutusunu ayıkla",
+          "sure_dk": 2,
+          "zorluk": 3,
+          "baglam": "atölye"
+        },
+        {
+          "id": "F14-06",
+          "metin": "Çalışma yüzeyini sil, bir sonraki işe hazırla",
+          "sure_dk": 2,
+          "zorluk": 2,
+          "baglam": "atölye"
+        }
+      ]
+    },
+    "D01": {
+      "kume_id": "DIJ",
+      "kume": "Dijital bakım",
+      "ad": "Mail kutusu",
+      "aciklama": "Gelen kutusu seyreltme ve bülten temizliği",
+      "anahtar_kelimeler": [
+        "mail",
+        "e-posta",
+        "gelen kutusu",
+        "inbox",
+        "bülten"
+      ],
+      "paket": "2.dalga",
+      "hafta_hedefi": 6,
+      "kimlik": "zihnine yer açan",
+      "kartlar": [
+        {
+          "id": "D01-01",
+          "metin": "10 maili sil ya da arşivle",
+          "sure_dk": 2,
+          "zorluk": 1,
+          "baglam": "telefon"
+        },
+        {
+          "id": "D01-02",
+          "metin": "Bir bültenden abonelikten çık",
+          "sure_dk": 2,
+          "zorluk": 1,
+          "baglam": "telefon"
+        },
+        {
+          "id": "D01-03",
+          "metin": "Yıldızla: cevap bekleyen 3 maili işaretle",
+          "sure_dk": 2,
+          "zorluk": 1,
+          "baglam": "telefon"
+        },
+        {
+          "id": "D01-04",
+          "metin": "En eski okunmamışa in: 5 karar",
+          "sure_dk": 2,
+          "zorluk": 2,
+          "baglam": "telefon"
+        },
+        {
+          "id": "D01-05",
+          "metin": "Bir klasör kuralı oluştur (fatura→klasör gibi)",
+          "sure_dk": 2,
+          "zorluk": 3,
+          "baglam": "bilgisayar"
+        },
+        {
+          "id": "D01-06",
+          "metin": "Spam'i boşalt",
+          "sure_dk": 2,
+          "zorluk": 1,
+          "baglam": "telefon"
+        },
+        {
+          "id": "D01-07",
+          "metin": "Tek maile 2 cümlelik cevap yaz",
+          "sure_dk": 2,
+          "zorluk": 2,
+          "baglam": "telefon"
+        },
+        {
+          "id": "D01-08",
+          "metin": "Promosyon sekmesini süpür",
+          "sure_dk": 2,
+          "zorluk": 1,
+          "baglam": "telefon"
+        }
+      ]
+    },
+    "D02": {
+      "kume_id": "DIJ",
+      "kume": "Dijital bakım",
+      "ad": "Telefon galerisi",
+      "aciklama": "Ekran görüntüsü ve çift fotoğraf ayıklama",
+      "anahtar_kelimeler": [
+        "galeri",
+        "fotoğraf",
+        "ekran görüntüsü",
+        "screenshot"
+      ],
+      "paket": "2.dalga",
+      "hafta_hedefi": 4,
+      "kimlik": "anılarını düzenli saklayan",
+      "kartlar": [
+        {
+          "id": "D02-01",
+          "metin": "20 ekran görüntüsü sil",
+          "sure_dk": 2,
+          "zorluk": 1,
+          "baglam": "telefon"
+        },
+        {
+          "id": "D02-02",
+          "metin": "Bugünün çekimlerinden kötüleri sil",
+          "sure_dk": 2,
+          "zorluk": 1,
+          "baglam": "telefon"
+        },
+        {
+          "id": "D02-03",
+          "metin": "Bir albüm oluştur, 10 fotoğraf taşı",
+          "sure_dk": 2,
+          "zorluk": 2,
+          "baglam": "telefon"
+        },
+        {
+          "id": "D02-04",
+          "metin": "Çift/benzer serilerden birini seç, kalanını sil x5",
+          "sure_dk": 2,
+          "zorluk": 2,
+          "baglam": "telefon"
+        },
+        {
+          "id": "D02-05",
+          "metin": "Videolardan en büyük 3'üne bak: gerekli mi?",
+          "sure_dk": 2,
+          "zorluk": 2,
+          "baglam": "telefon"
+        },
+        {
+          "id": "D02-06",
+          "metin": "Favorilere bu ayın en iyi 5'ini ekle",
+          "sure_dk": 2,
+          "zorluk": 1,
+          "baglam": "telefon"
+        }
+      ]
+    },
+    "D03": {
+      "kume_id": "DIJ",
+      "kume": "Dijital bakım",
+      "ad": "Dosya & bulut düzeni",
+      "aciklama": "Drive/klasör bakımı, adlandırma, ayıklama",
+      "anahtar_kelimeler": [
+        "dosya",
+        "klasör",
+        "drive",
+        "bulut",
+        "belge"
+      ],
+      "paket": "LLM",
+      "hafta_hedefi": 3,
+      "kimlik": "dijitalini derli toplu tutan",
+      "kartlar": [
+        {
+          "id": "D03-01",
+          "metin": "İndirilenlerden 10 dosya sil",
+          "sure_dk": 2,
+          "zorluk": 1,
+          "baglam": "bilgisayar"
+        },
+        {
+          "id": "D03-02",
+          "metin": "Bir klasörü yeniden adlandır-düzenle",
+          "sure_dk": 2,
+          "zorluk": 2,
+          "baglam": "bilgisayar"
+        },
+        {
+          "id": "D03-03",
+          "metin": "Masaüstünden 5 dosyayı yerine taşı",
+          "sure_dk": 2,
+          "zorluk": 1,
+          "baglam": "bilgisayar"
+        },
+        {
+          "id": "D03-04",
+          "metin": "Çöp kutusunu boşalt",
+          "sure_dk": 2,
+          "zorluk": 1,
+          "baglam": "bilgisayar"
+        },
+        {
+          "id": "D03-05",
+          "metin": "Bir 'karışık' klasörüne 2 dk",
+          "sure_dk": 2,
+          "zorluk": 3,
+          "baglam": "bilgisayar"
+        },
+        {
+          "id": "D03-06",
+          "metin": "Büyük dosyalar listesine bak: 3 karar",
+          "sure_dk": 2,
+          "zorluk": 2,
+          "baglam": "bilgisayar"
+        }
+      ]
+    },
+    "D04": {
+      "kume_id": "DIJ",
+      "kume": "Dijital bakım",
+      "ad": "Uygulama & abonelik temizliği",
+      "aciklama": "Kullanılmayan uygulama ve abonelik ayıklama",
+      "anahtar_kelimeler": [
+        "uygulama",
+        "abonelik",
+        "üyelik",
+        "app"
+      ],
+      "paket": "LLM",
+      "hafta_hedefi": 2,
+      "kimlik": "dikkatine sahip çıkan",
+      "kartlar": [
+        {
+          "id": "D04-01",
+          "metin": "Kullanmadığın 3 uygulamayı sil",
+          "sure_dk": 2,
+          "zorluk": 1,
+          "baglam": "telefon"
+        },
+        {
+          "id": "D04-02",
+          "metin": "Abonelik listeni aç: 1 tanesini sorgula",
+          "sure_dk": 2,
+          "zorluk": 2,
+          "baglam": "telefon"
+        },
+        {
+          "id": "D04-03",
+          "metin": "Bildirimi kapatılacak 3 uygulama seç",
+          "sure_dk": 2,
+          "zorluk": 1,
+          "baglam": "telefon"
+        },
+        {
+          "id": "D04-04",
+          "metin": "Ana ekranı düzenle: bir klasör kur",
+          "sure_dk": 2,
+          "zorluk": 2,
+          "baglam": "telefon"
+        },
+        {
+          "id": "D04-05",
+          "metin": "Bir üyelik iptali başlat",
+          "sure_dk": 2,
+          "zorluk": 3,
+          "baglam": "telefon"
+        },
+        {
+          "id": "D04-06",
+          "metin": "Ekran süresi raporuna 1 dk dürüst bakış",
+          "sure_dk": 2,
+          "zorluk": 1,
+          "baglam": "telefon"
+        }
+      ]
+    },
+    "D05": {
+      "kume_id": "DIJ",
+      "kume": "Dijital bakım",
+      "ad": "Masaüstü & indirilenler",
+      "aciklama": "Bilgisayar masaüstü ve indirilenler klasörü",
+      "anahtar_kelimeler": [
+        "masaüstü",
+        "indirilenler",
+        "desktop",
+        "download"
+      ],
+      "paket": "LLM",
+      "hafta_hedefi": 3,
+      "kimlik": "ekranını sade tutan",
+      "kartlar": [
+        {
+          "id": "D05-01",
+          "metin": "Masaüstünden 10 simge: sil ya da klasöre",
+          "sure_dk": 2,
+          "zorluk": 1,
+          "baglam": "bilgisayar"
+        },
+        {
+          "id": "D05-02",
+          "metin": "İndirilenleri tarihe göre sırala, en eskiden 5 sil",
+          "sure_dk": 2,
+          "zorluk": 1,
+          "baglam": "bilgisayar"
+        },
+        {
+          "id": "D05-03",
+          "metin": "Tarayıcıda 10 sekme kapat",
+          "sure_dk": 2,
+          "zorluk": 1,
+          "baglam": "bilgisayar"
+        },
+        {
+          "id": "D05-04",
+          "metin": "Yer imlerinden ölü 3 linki sil",
+          "sure_dk": 2,
+          "zorluk": 2,
+          "baglam": "bilgisayar"
+        },
+        {
+          "id": "D05-05",
+          "metin": "Ekran görüntülerini tek klasöre süpür",
+          "sure_dk": 2,
+          "zorluk": 1,
+          "baglam": "bilgisayar"
+        }
+      ]
+    },
+    "E01": {
+      "kume_id": "EVR",
+      "kume": "Evrak & idari",
+      "ad": "Evrak & fatura düzeni",
+      "aciklama": "Kağıt yığını, fatura, garanti belgesi ayıklama",
+      "anahtar_kelimeler": [
+        "evrak",
+        "fatura",
+        "belge",
+        "kağıt",
+        "dosyalama",
+        "makbuz"
+      ],
+      "paket": "2.dalga",
+      "hafta_hedefi": 4,
+      "kimlik": "evrakına hakim",
+      "kartlar": [
+        {
+          "id": "E01-01",
+          "metin": "Kağıt yığınından 5 parça: dosyala ya da at",
+          "sure_dk": 2,
+          "zorluk": 2,
+          "baglam": "ev"
+        },
+        {
+          "id": "E01-02",
+          "metin": "Bir faturanın ödendiğini kontrol et, işaretle",
+          "sure_dk": 2,
+          "zorluk": 1,
+          "baglam": "telefon"
+        },
+        {
+          "id": "E01-03",
+          "metin": "Garanti/kutu evraklarından 3'üne karar ver",
+          "sure_dk": 2,
+          "zorluk": 2,
+          "baglam": "ev"
+        },
+        {
+          "id": "E01-04",
+          "metin": "Bir belgeyi tara/fotoğrafla, klasörüne at",
+          "sure_dk": 2,
+          "zorluk": 1,
+          "baglam": "telefon"
+        },
+        {
+          "id": "E01-05",
+          "metin": "'Önemli evrak' zarfını/klasörünü hizala",
+          "sure_dk": 2,
+          "zorluk": 2,
+          "baglam": "ev"
+        },
+        {
+          "id": "E01-06",
+          "metin": "Son gelen postaları aç: karar ver",
+          "sure_dk": 2,
+          "zorluk": 1,
+          "baglam": "ev"
+        },
+        {
+          "id": "E01-07",
+          "metin": "Bir aboneliğin faturasını dijitale çevir",
+          "sure_dk": 2,
+          "zorluk": 3,
+          "baglam": "telefon"
+        },
+        {
+          "id": "E01-08",
+          "metin": "Vergi/resmi klasörüne gelen son belgeyi yerleştir",
+          "sure_dk": 2,
+          "zorluk": 2,
+          "baglam": "ev"
+        }
+      ]
+    },
+    "E02": {
+      "kume_id": "EVR",
+      "kume": "Evrak & idari",
+      "ad": "Minik işler destesi",
+      "aciklama": "2 dk'lık idari borçlar: randevu, iade, form, kargo",
+      "anahtar_kelimeler": [
+        "randevu",
+        "iade",
+        "form",
+        "kargo",
+        "minik iş",
+        "ufak iş",
+        "halletmem gereken"
+      ],
+      "paket": "MVP",
+      "hafta_hedefi": 8,
+      "kimlik": "işini erteletmeyen",
+      "kartlar": [
+        {
+          "id": "E02-01",
+          "metin": "O randevuyu şimdi al (sağlık/kuaför/servis)",
+          "sure_dk": 2,
+          "zorluk": 2,
+          "baglam": "telefon"
+        },
+        {
+          "id": "E02-02",
+          "metin": "İade/değişim işlemini başlat",
+          "sure_dk": 2,
+          "zorluk": 2,
+          "baglam": "telefon"
+        },
+        {
+          "id": "E02-03",
+          "metin": "Kargo kodunu al, çantana koy",
+          "sure_dk": 2,
+          "zorluk": 1,
+          "baglam": "telefon"
+        },
+        {
+          "id": "E02-04",
+          "metin": "O formu doldur — sadece ilk sayfası da olur",
+          "sure_dk": 2,
+          "zorluk": 2,
+          "baglam": "telefon"
+        },
+        {
+          "id": "E02-05",
+          "metin": "Fatura talimatı/otomatik ödeme kur",
+          "sure_dk": 2,
+          "zorluk": 3,
+          "baglam": "telefon"
+        },
+        {
+          "id": "E02-06",
+          "metin": "Takvime ertelediğin işi tarih vererek yaz",
+          "sure_dk": 2,
+          "zorluk": 1,
+          "baglam": "telefon"
+        },
+        {
+          "id": "E02-07",
+          "metin": "O parayı gönder/iste (borç, ortak hesap)",
+          "sure_dk": 2,
+          "zorluk": 1,
+          "baglam": "telefon"
+        },
+        {
+          "id": "E02-08",
+          "metin": "Bir kaydı güncelle (adres, telefon, IBAN)",
+          "sure_dk": 2,
+          "zorluk": 2,
+          "baglam": "telefon"
+        },
+        {
+          "id": "E02-09",
+          "metin": "Eczane/market listesine eksikleri yaz",
+          "sure_dk": 2,
+          "zorluk": 1,
+          "baglam": "telefon"
+        },
+        {
+          "id": "E02-10",
+          "metin": "Yarın çıkarken götürülecekleri kapıya koy",
+          "sure_dk": 2,
+          "zorluk": 1,
+          "baglam": "ev"
+        }
+      ]
+    },
+    "I01": {
+      "kume_id": "ILT",
+      "kume": "İletişim borçları",
+      "ad": "Mesaj borçları",
+      "aciklama": "Cevaplanmamış mesaj ve maillere kısa dönüşler",
+      "anahtar_kelimeler": [
+        "mesaj",
+        "cevap",
+        "whatsapp",
+        "dönmedim",
+        "yazmam lazım"
+      ],
+      "paket": "2.dalga",
+      "hafta_hedefi": 5,
+      "kimlik": "bağlarını koparmayan",
+      "kartlar": [
+        {
+          "id": "I01-01",
+          "metin": "En eski cevapsız mesaja 2 cümle dön",
+          "sure_dk": 2,
+          "zorluk": 2,
+          "baglam": "telefon"
+        },
+        {
+          "id": "I01-02",
+          "metin": "'Dönerim' dediğin birine dön",
+          "sure_dk": 2,
+          "zorluk": 2,
+          "baglam": "telefon"
+        },
+        {
+          "id": "I01-03",
+          "metin": "Grup mesajındaki soruyu cevapla",
+          "sure_dk": 2,
+          "zorluk": 1,
+          "baglam": "telefon"
+        },
+        {
+          "id": "I01-04",
+          "metin": "Bir davete evet/hayır de — asılı bırakma",
+          "sure_dk": 2,
+          "zorluk": 2,
+          "baglam": "telefon"
+        },
+        {
+          "id": "I01-05",
+          "metin": "Sesli mesaj bırak: yazmaktan kolaysa",
+          "sure_dk": 2,
+          "zorluk": 1,
+          "baglam": "telefon"
+        },
+        {
+          "id": "I01-06",
+          "metin": "3 sohbeti arşivle: kapanmış olanları",
+          "sure_dk": 2,
+          "zorluk": 1,
+          "baglam": "telefon"
+        }
+      ]
+    },
+    "I02": {
+      "kume_id": "ILT",
+      "kume": "İletişim borçları",
+      "ad": "Arama borçları",
+      "aciklama": "'Aramam lazım' listesi",
+      "anahtar_kelimeler": [
+        "aramak",
+        "telefon etmek",
+        "aramam lazım"
+      ],
+      "paket": "LLM",
+      "hafta_hedefi": 3,
+      "kimlik": "sesini esirgemeyen",
+      "kartlar": [
+        {
+          "id": "I02-01",
+          "metin": "'Aramam lazım' listenden birini şimdi ara",
+          "sure_dk": 2,
+          "zorluk": 3,
+          "baglam": "telefon"
+        },
+        {
+          "id": "I02-02",
+          "metin": "Aramayı takvime koy: gün + saat",
+          "sure_dk": 2,
+          "zorluk": 1,
+          "baglam": "telefon"
+        },
+        {
+          "id": "I02-03",
+          "metin": "2 dk'lık kısa arama: sadece hal hatır",
+          "sure_dk": 2,
+          "zorluk": 2,
+          "baglam": "telefon"
+        },
+        {
+          "id": "I02-04",
+          "metin": "Cevapsız çağrıya dönüş yap",
+          "sure_dk": 2,
+          "zorluk": 2,
+          "baglam": "telefon"
+        }
+      ]
+    },
+    "I03": {
+      "kume_id": "ILT",
+      "kume": "İletişim borçları",
+      "ad": "Teşekkür & tebrik borçları",
+      "aciklama": "Doğum günü, teşekkür, geçmiş olsun borçları",
+      "anahtar_kelimeler": [
+        "teşekkür",
+        "tebrik",
+        "doğum günü",
+        "kutlama"
+      ],
+      "paket": "LLM",
+      "hafta_hedefi": 2,
+      "kimlik": "iyi günü unutmayan",
+      "kartlar": [
+        {
+          "id": "I03-01",
+          "metin": "Doğum günü mesajını şimdi at",
+          "sure_dk": 2,
+          "zorluk": 1,
+          "baglam": "telefon"
+        },
+        {
+          "id": "I03-02",
+          "metin": "Teşekkür borcunu 2 cümleyle öde",
+          "sure_dk": 2,
+          "zorluk": 1,
+          "baglam": "telefon"
+        },
+        {
+          "id": "I03-03",
+          "metin": "Geçmiş olsun mesajı gönder",
+          "sure_dk": 2,
+          "zorluk": 1,
+          "baglam": "telefon"
+        },
+        {
+          "id": "I03-04",
+          "metin": "Yaklaşan 2 doğum gününe hatırlatıcı kur",
+          "sure_dk": 2,
+          "zorluk": 1,
+          "baglam": "telefon"
+        }
+      ]
+    }
+  }
+}
