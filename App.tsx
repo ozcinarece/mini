@@ -3,61 +3,12 @@ import { Marcellus_400Regular, useFonts } from "@expo-google-fonts/marcellus";
 import { LinearGradient } from "expo-linear-gradient";
 import { StatusBar } from "expo-status-bar";
 import React, { useEffect, useState } from "react";
-import { Text, View } from "react-native";
 import { SafeAreaProvider, SafeAreaView } from "react-native-safe-area-context";
-import { Belir } from "./src/components/Belir";
-import { Horizon } from "./src/components/Horizon";
-import type { OnboardingSonuc } from "./src/engine/arketip";
-import { tr } from "./src/i18n/tr";
+import * as depo from "./src/db/depo";
+import { Bugun } from "./src/screens/Bugun";
 import { Intro } from "./src/screens/Intro";
 import { Onboarding } from "./src/screens/Onboarding";
-import { bosluk, font, renk } from "./src/theme";
-
-// Onboarding sonrası geçici ekran — Bugün ekranı (MVP adım 2) gelene kadar
-function IlkGun({ sonuc }: { sonuc: OnboardingSonuc }) {
-  return (
-    <View style={{ flex: 1, alignItems: "center", justifyContent: "center", paddingHorizontal: 40 }}>
-      <Belir stil={{ maxWidth: bosluk.maxGenislik, alignItems: "center" }}>
-        <Horizon dogmus />
-        <Text
-          style={{
-            fontFamily: font.serif,
-            fontSize: 24,
-            color: renk.ink,
-            textAlign: "center",
-            marginBottom: 16,
-          }}
-        >
-          {tr.ilkGun.baslik}
-        </Text>
-        <Text
-          style={{
-            fontFamily: font.serif,
-            fontSize: 18,
-            lineHeight: 30,
-            color: renk.ink,
-            textAlign: "center",
-            marginBottom: 24,
-          }}
-        >
-          {sonuc.capa},{"\n"}
-          <Text style={{ color: renk.sun }}>{sonuc.mikro}</Text>.
-        </Text>
-        <Text
-          style={{
-            fontFamily: font.sans,
-            fontSize: 12,
-            lineHeight: 20,
-            color: renk.dim,
-            textAlign: "center",
-          }}
-        >
-          {tr.ilkGun.aciklama}
-        </Text>
-      </Belir>
-    </View>
-  );
-}
+import { renk } from "./src/theme";
 
 export default function App() {
   const [fontlarYuklendi, fontHatasi] = useFonts({
@@ -76,7 +27,7 @@ export default function App() {
   const hazir = fontlarYuklendi || !!fontHatasi || beklemeAsildi;
 
   const [introAdim, setIntroAdim] = useState(0);
-  const [sonuc, setSonuc] = useState<OnboardingSonuc | null>(null);
+  const [kayit, setKayit] = useState<depo.Kayit | null>(() => depo.kayitYukle());
 
   return (
     <SafeAreaProvider>
@@ -88,8 +39,8 @@ export default function App() {
         <StatusBar style="light" />
         <SafeAreaView style={{ flex: 1 }}>
           {hazir &&
-            (sonuc ? (
-              <IlkGun sonuc={sonuc} />
+            (kayit ? (
+              <Bugun kayit={kayit} />
             ) : introAdim < 2 ? (
               <Intro
                 adim={introAdim}
@@ -97,7 +48,7 @@ export default function App() {
                 onGec={() => setIntroAdim(2)}
               />
             ) : (
-              <Onboarding onBitti={setSonuc} />
+              <Onboarding onBitti={(sonuc) => setKayit(depo.kayitSakla(sonuc))} />
             ))}
         </SafeAreaView>
       </LinearGradient>

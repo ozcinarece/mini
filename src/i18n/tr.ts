@@ -61,10 +61,65 @@ export const tr = {
     sozBaslayalim: "söz — başlayalım",
   },
 
-  // onboarding sonrası geçici ekran (Bugün ekranı gelene kadar)
-  ilkGun: {
-    baslik: "sözün hazır.",
-    aciklama: "yarın buradan devam edeceğiz —\nbugün ekranı yolda.",
+  gunAdlari: ["pazar", "pazartesi", "salı", "çarşamba", "perşembe", "cuma", "cumartesi"],
+
+  bugun: {
+    hafta: (n: number) => `hafta ${n}`,
+
+    // 🌱🕰️🐌 çapa ailesi
+    tekIsinVar: "tek işin var.",
+    bugunlukBuKadar: "bugünlük bu kadar.",
+    gunesDogar: "sözünü tuttuğunda güneş doğar",
+    yaptim: "yaptım",
+    canimIstemiyor: "bugün canım hiç istemiyor",
+
+    // 🧺 dağınık bakım
+    desteHazir: "deste hazır.",
+    birKartDahaGitti: "bir kart daha gitti.",
+    haftaSayaci: (yapilan: number, hedef: number) => `bu hafta ${yapilan}/${hedef}`,
+    ikiDakikamVar: "iki dakikam var",
+    evBeniYendi: "bugün ev beni yendi",
+    cesaretKarti: "cesaret kartı · ",
+    ikiDakika: "iki dakika. fazlası serbest.",
+    baskaKart: "başka kart",
+    desteDuzenlemeOnerisi: "üst üste geri koyuyorsun — istersen desteyi birlikte düzenleyelim.",
+    ikiDakikamDahaVar: "iki dakikam daha var",
+  },
+
+  kutlama: {
+    oy: (n: number) => `${n}. oy`,
+    not: { kaynak: "Clear", metin: "her tekrar, o kişiye atılmış bir oydur." },
+  },
+
+  ilkYardim: {
+    iyiKiSoyledin: "iyi ki söyledin.",
+    nasilIstememe: "nasıl bir istememe bu?",
+    secenekler: ["yorgunum", "sıkıldım", "kafam çok dolu", "sebepsiz — işte istemiyorum"],
+    vazgectim: "vazgeçtim, iyiyim",
+
+    nefesYonerge: "büyürken al, küçülürken ver.\nbir dakika buradayım.",
+    birazDahaIyiyim: "biraz daha iyiyim",
+
+    receteler: {
+      yorgun: {
+        baslik: "o zaman bugün izin günü tarifi.",
+        metin: "tarif değil, sadece hazırlığı. sayılır — söz.",
+      },
+      sikildim: {
+        baslik: "sıkıcı olan tarif, sen değilsin.",
+        metin: "bugün sevdiğin bir şeyle eşleştir: podcast, müzik, ne iyi geliyorsa.",
+      },
+      istemiyorum: {
+        baslik: "iki dakika anlaşması.",
+        metin: "sadece başla. iki dakika sonra bırakabilirsin — gerçekten. gelmese de anlaşma geçerli.",
+      },
+    },
+    deniyorum: "tamam, deniyorum",
+    halaOlmuyor: "hâlâ olmuyor",
+
+    izinBaslik: "bugünü boş bırakalım.",
+    izinMetin: "bazı günler böyledir. yarın buradayım —\naynı an, aynı küçük tarif.",
+    gorusuruz: "görüşürüz",
   },
 
   ornekHedefler: [
