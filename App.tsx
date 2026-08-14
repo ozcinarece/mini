@@ -2,7 +2,7 @@ import { Figtree_400Regular, Figtree_500Medium, Figtree_600SemiBold } from "@exp
 import { Marcellus_400Regular, useFonts } from "@expo-google-fonts/marcellus";
 import { LinearGradient } from "expo-linear-gradient";
 import { StatusBar } from "expo-status-bar";
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { Text, View } from "react-native";
 import { SafeAreaProvider, SafeAreaView } from "react-native-safe-area-context";
 import { Belir } from "./src/components/Belir";
@@ -60,12 +60,21 @@ function IlkGun({ sonuc }: { sonuc: OnboardingSonuc }) {
 }
 
 export default function App() {
-  const [fontlarHazir] = useFonts({
+  const [fontlarYuklendi, fontHatasi] = useFonts({
     Marcellus_400Regular,
     Figtree_400Regular,
     Figtree_500Medium,
     Figtree_600SemiBold,
   });
+  // font yüklemesi takılırsa ekran boş kalmasın: kısa bir bekleme sonrası
+  // sistem fontuyla devam edilir (Android bilinmeyen fontFamily'de sessizce geri düşer)
+  const [beklemeAsildi, setBeklemeAsildi] = useState(false);
+  useEffect(() => {
+    const zamanlayici = setTimeout(() => setBeklemeAsildi(true), 3000);
+    return () => clearTimeout(zamanlayici);
+  }, []);
+  const hazir = fontlarYuklendi || !!fontHatasi || beklemeAsildi;
+
   const [introAdim, setIntroAdim] = useState(0);
   const [sonuc, setSonuc] = useState<OnboardingSonuc | null>(null);
 
@@ -78,7 +87,7 @@ export default function App() {
       >
         <StatusBar style="light" />
         <SafeAreaView style={{ flex: 1 }}>
-          {fontlarHazir &&
+          {hazir &&
             (sonuc ? (
               <IlkGun sonuc={sonuc} />
             ) : introAdim < 2 ? (
