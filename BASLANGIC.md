@@ -18,7 +18,7 @@ CLAUDE.md'yi ve docs/ altındaki dosyaları oku. Sonra:
 2. Paketleri ekle: expo-notifications, expo-sqlite, expo-haptics, expo-av, expo-updates. EAS'i başlat: `npx eas init` ve `eas update:configure`.
 3. `.github/workflows/eas-update.yml` oluştur: main'e her push'ta `eas update --branch preview --auto` çalışsın (EXPO_TOKEN secret'ı ile, node 20, `npx expo install --fix` sonrası).
 4. `src/theme.ts` (BOŞLUK tokenları) ve `src/i18n/tr.ts` dosyalarını CLAUDE.md'deki kurallara göre kur.
-5. İlk ekran olarak docs/prototip-v19.jsx'teki intro + onboarding akışını React Native'e porte etmeye başla (web'e özgü kısımları — CSS keyframes vb. — Animated/Reanimated ile karşıla). MVP sırası CLAUDE.md'de.
+5. İlk ekran olarak docs/prototip-v28.jsx'teki akışı React Native'e porte etmeye başla (web'e özgü kısımları — CSS keyframes vb. — Animated/Reanimated ile karşıla). MVP sırası CLAUDE.md'de.
 6. Her anlamlı adımda commit + push at.
 ---
 

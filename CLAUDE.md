@@ -1,52 +1,36 @@
 # CLAUDE.md — minik
 
-> Bu dosya projenin anayasasıdır. Her oturumda önce bunu oku. Buradaki kararlar tartışılarak alındı; değiştirmeden önce docs/mimari.md'ye bak ve kullanıcıya sor.
+> Projenin anayasası. Her oturumda önce bunu oku. **Vizyon 2026-08'de pivot yaptı** (aşağıda); eski akıllı-motor mimarisi docs/arsiv/'dedir ve UYGULANMAZ.
 
-## Ürün nedir
-minik, bir alışkanlık uygulaması değil — **davranış tasarım motoru**. 10 davranış bilimi kitabının (Clear, Fogg, Duhigg, Steel, Eyal, Moran, McKeown, Newport, McGonigal, Tracy) yöntemlerini tek üründe birleştirir. Ana tez: motivasyon pompalanmaz, kanıt biriktirilir. Kullanıcı günde tek küçük söz verir; tuttuğunda "oy/kanıt" birikir ve kimliği pekişir ("ben okur biriyim").
+## Ürün nedir (FINAL VİZYON — "paketler")
+minik, kontrolü tamamen kullanıcıda olan, huzurlu bir **paket-bazlı hatırlatıcı + kanıt biriktirici**dir.
+- Kullanıcı sınırlı sayıda küratörlü **paket**ten seçer: ev düzeni · kitap okuma · su & hareket · ekran molası · minik işler · kendi paketim.
+- Her pakette hazır **komutlar** vardır (data/katalog-daginik.json'dan damıtılır); kullanıcı komut çıkarabilir, kendi komutunu ekleyebilir.
+- Kullanıcı **hangi günler**, **günde kaç kez** (GLOBAL GÜNLÜK TAVAN: 5 — pazarlık edilemez), **hangi saat aralığında** (tek pencere VEYA gün-bazlı pencere: her gün için sabah 08–12 / gün boyu 09–21 / akşam 18–23) bildirim istediğini seçer.
+- Bildirimler havuzdan rotasyonla gelir (son 3 komut tekrar etmez). **Tarife kullanıcıya asla ajanda gibi gösterilmez** — saat listesi, sıra, plan ekranı YOK. Bugün ekranı çek-esaslıdır.
+- **"yaptım" = +1 kanıt**: güneş doğar, sayaç büyür. "şimdi olmadı" = sıfır suçluluk, komut sonra tekrar denenir.
 
-## Değişmez ilkeler
-1. **Azaltma ürünün ruhudur.** "Sana hayır diyebilen uygulama": tek aktif hedef, en fazla 4 haftalık söz, günde en fazla 1 bildirim, "günde 3 dakikan yeter" sözü. Özellik eklerken filtre: bu, azaltma ruhuyla çelişiyor mu?
-2. **Suçluluk sözlüğü yasak:** "kaçırdın", "başarısız", "seri bozuldu", "maalesef" hiçbir ekranda geçmez. Kaçırma = veri. Streak yok; oran dili var ("son 30 günde 26 temiz gün").
-3. **Soru formu, emir değil:** "2 şınav?" — özerklik esastır. Uygulama önerir, dayatmaz; seviye yükseltmeyi bile sadece önerir.
-4. **Topluluk duygudur, mekanik değildir:** feed yok, sohbet yok, profil yok. Kohort tek satır yaşar; sahte kalabalık asla.
-5. **Motivasyon push edilmez, tetiklenir:** kıvılcım kartları duruma bağlı, kıtlık kuralı (cooldown) pazarlık edilemez. Kart havuzu küratörlüdür; LLM kart yazamaz (bkz. docs/motivasyon-kutuphanesi.md).
+## Referans prototip: docs/prototip-v28.jsx (birebir kaynak)
+Ekranlar: intro (2 nefes: "küçük bir söz için yer vardır" + "burada kontrol sende") → Kurulum sihirbazı (paket → komut düzenleme → günler → adet [kalan tavan kadar seçenek] → pencere [+ gün bazlı] → özet) → alanlar: **bugün · geçmiş · paketler · kimlik**.
+- bugün: güneş + "iki dakikam var" (havuzdan komut çeker) + yaptım/şimdi olmadı + "ara ara ben de seslenirim — saatlerini dert etme" satırı.
+- geçmiş: son 14 gün, günde 1 nokta/kanıt (maks 5), bugün parlak; oran dili ("14 günün 11'inde..."); kapanış: "boş günler kayıp değil — sadece sessiz."
+- paketler: abonelik listesi, sessize al/aç, günlük ses sayacı (X/5), + yeni paket.
+- kimlik: "sen sözünü tutan birisin." + büyük kanıt sayısı; boş hal: "şimdilik bu bir iddia... bugüne git".
 
-## Davranış motoru (docs/mimari.md — tam hali)
-7 arketip; her hedefin mekaniğini arketip belirler:
-- 🌱 baslama / 🕰️ duzenlilik / 🐌 erteleme: çapa (istifleme) + günlük damga
-- ✂️ birakma / 🤏 azaltma: tetik = istek anı; karşı-hamle tarifi; temiz gün ORAN dili (sayaç değil)
-- 🌊 duygu: çapasız; akşam yoklaması (geldi+uyguladım / geldi+uygulayamadım / gelmedi — üçü de suçsuz)
-- 🧺 daginik: görev destesi + kullanıcı-pull "iki dakikam var"; kartı SİSTEM seçer; hafta hedefi (gün değil)
-Deste kuralları: son 3 kart tekrar gelmez; zorluk-3'ten sonra zorluk-3 gelmez; 3. "başka kart"ta deste düzenleme önerilir; bağlam filtresi opsiyonel.
-Veri: data/katalog-daginik.json (24 alt hedef, 173 kart, anahtar kelimeler, kimlik cümleleri). Serbest metin → anahtar kelime eşleşmesi → alt hedef önerisi → kullanıcı seçer.
+## Değişmez ilkeler (pivotta korunanlar)
+1. Suçluluk sözlüğü yasak ("kaçırdın/başarısız/seri bozuldu" asla). Boş gün = sessiz gün.
+2. Azaltma ruhu: tavan 5; "fazla ses, sesi görünmez yapar." Uygulama tutundurma için yalvarma/dark pattern kullanmaz.
+3. Metafor kuralı: güneş/ufuk yalnız büyük anlarda (yaptım, özet); veri ekranında süs yok, sayı konuşur.
+4. Tasarım dili "BOŞLUK": sabah denizi gradyanı; kutu/kart/buton/gölge/üst bar YOK; seçenekler kelimedir (seçilen kalır, diğerleri solar); Marcellus + Figtree; hep küçük harf; animasyon 0.7–1.8sn; tek vurgu #EEBB8D. Tokenlar: src/theme.ts.
+5. Çoklu seçim asla gömülmez — kendi ekranını/halkalı desenini alır.
+6. Kullanıcı metinleri src/i18n/tr.ts'te; koda gömülmez.
 
-## Onboarding (v19 akışı)
-intro (2 nefes, "geç" hakkı) → "peki — senin için ne değişsin?" (serbest metin + canlı öneri; sınırsız hedef, bekleme listesi) → [birden çok hedefse: neden-tek + seçim] → neden-küçük → mikro/deste → [çapa gerekliyse: neden-çapa + çapa; tetikli arketipte tetik notu] → sözleşme (kimlik cümlesi katalogdan OTOMATİK, kullanıcıya sorulmaz; iki taraflı söz).
-Tek hedefte seçim sayfaları atlanır. Tanıma/doz soruları kaldırıldı (ileri faz).
+## Teknik (değişmedi)
+Expo RN+TS, telefon-only akış: push → GitHub Actions eas-update → Expo Go. Bildirim: expo-notifications (tarifeyi pencere içine eşit dağıt + hafif rastgelelik; kullanıcıya saat gösterme). Veri: expo-sqlite (abonelikler, günlük kanıt sayları, komut havuz durumu). Haptik: yaptım anında.
 
-## Tasarım dili: "BOŞLUK" (referans: docs/prototip-v19.jsx)
-- Sabah denizi gradyanı zemin; kutu YOK, kart YOK, buton YOK, gölge YOK, üst bar YOK.
-- Seçenekler kelimedir; seçilen kalır, diğerleri ~1sn'de solar, akış otomatik ilerler.
-- Tek vurgu rengi: kayısı güneş #EEBB8D. Metin #F5F0E4 / #AEC3C6 / #849BA1. Çizgi rgba(245,240,228,.20).
-- Tipografi: Marcellus (başlık/serif, tek ağırlık) + Figtree (gövde). Her şey küçük harf.
-- İmza metafor: ufuk + güneş. Görev yapılınca güneş 1.6-1.8sn'de doğar. KURAL: metafor sadece büyük anda; veri ekranlarında süs yok, sayı konuşur (Kimlik ekranı: büyük sayı). Liman = gece denizi (nefes alan ay + su yansıması + süzülen dalgalar).
-- Animasyonlar yavaş (0.7-1.8sn), prefers-reduced-motion desteklenir. Emoji neredeyse hiç.
-- Alanlar: bugün · liman · kimlik (sezon ekranı bilinçli kaldırıldı; haftalık sözler ileride nereye konacak açık soru).
+## MVP sırası (yeni)
+1. Kurulum sihirbazı (v28 birebir) → 2. bugün (çek + yaptım + kanıt) → 3. bildirim motoru (tarife üretimi, rotasyon, tavan) → 4. SQLite kalıcılık → 5. geçmiş → 6. paketler yönetimi → 7. kimlik.
+Mevcut src/ dosyaları eski vizyondan kalanlar içerebilir (engine/arketip, screens/Onboarding vb.) — v28'e göre sadeleştir/uyarla; kullanılmayanları sil.
 
-## Teknik kararlar
-- **Expo (React Native + TypeScript)**, managed + dev-build. EAS Build (bulut) — geliştirici makinesi YOK, her şey GitHub üzerinden.
-- Telefon-only akış: kod GitHub'da; CI = GitHub Actions; her push'ta `eas update` → kullanıcı Expo Go ile test eder. EXPO_TOKEN repo secret'ı.
-- Yerel veri: expo-sqlite. Bildirim: expo-notifications (çapa saatli, günde 1). Ses: expo-av (İlk Yardım ses notu, sezonda max 2 çalma). Haptik: expo-haptics (damga anı).
-- Faz 2 (şimdi YAPMA): Android UsageStats/interception, iOS ScreenTime (entitlement), widget, kohort backend, LLM koç.
-- Kod stili: fonksiyonel bileşenler, tema tokenları tek dosyada (theme.ts), Türkçe kullanıcı metinleri i18n dosyasında (tr.ts) — metinler koda gömülmez.
-
-## MVP kapsamı (sırayla)
-1. Onboarding v19 birebir → 2. Bugün: 🌱 damga + 🧺 deste (katalogdan) → 3. Kutlama (güneş doğar + not) → 4. İlk Yardım merdiveni → 5. Liman (nefes + okumalar + kasa) → 6. Kimlik (parametrik sayaç + boş hal) → 7. Bildirim + SQLite kalıcılık → 8. ✂️/🤏/🌊 ekranları.
-Yapılmayacaklar (MVP'de): sezon/kohort backend'i, interception, widget, sesli not kaydı UI'ı ötesi.
-
-## Kaynak dosyalar
-- docs/prototip-v19.jsx — çalışan referans prototip (tasarım + akış + deste motoru buradan porte edilir)
-- docs/mimari.md — motor mimarisi + topluluk katmanı + açık sorular
-- docs/motivasyon-kutuphanesi.md — kıvılcım kartları, tetikleyici taksonomisi, kurallar
-- data/katalog-daginik.json — 🧺 veri kataloğu (xlsx'in dışa aktarımı; xlsx kullanıcının düzenleme masasıdır)
+## Kaynaklar
+docs/prototip-v28.jsx (REFERANS) · data/katalog-daginik.json (ev & minik işler komut kaynağı) · docs/motivasyon-kutuphanesi.md (bildirim metni tonu için) · docs/arsiv/ (eski motor — uygulama, sadece tarih)
