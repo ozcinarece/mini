@@ -5,14 +5,13 @@ import { Horizon } from "../components/Horizon";
 import { tr } from "../i18n/tr";
 import { bosluk, font, renk } from "../theme";
 
-// Karşılama: iki nefes, sonra ilk soru. "geç" hakkı her zaman var.
+// Karşılama: iki nefes, sonra kurulum sihirbazı (v28)
 type Props = {
   adim: number;
   onIleri: () => void;
-  onGec: () => void;
 };
 
-export function Intro({ adim, onIleri, onGec }: Props) {
+export function Intro({ adim, onIleri }: Props) {
   return (
     <Pressable
       onPress={onIleri}
@@ -79,16 +78,6 @@ export function Intro({ adim, onIleri, onGec }: Props) {
       >
         {tr.ortak.dokun}
       </Text>
-
-      <Pressable
-        onPress={onGec}
-        hitSlop={12}
-        style={{ position: "absolute", bottom: 24, right: 28 }}
-      >
-        <Text style={{ fontFamily: font.sans, fontSize: 12, color: renk.dim, opacity: 0.7 }}>
-          {tr.ortak.gec}
-        </Text>
-      </Pressable>
     </Pressable>
   );
 }

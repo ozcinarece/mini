@@ -4,184 +4,94 @@
 export const tr = {
   ortak: {
     dokun: "dokun",
-    dokunVeDon: "dokun ve dön",
-    gec: "geç",
     devam: "devam",
-    anladim: "anladım",
+    geri: "geri",
     tamam: "tamam",
+    vazgec: "vazgeç",
   },
 
   intro: {
     birinciSatir: "gün ne kadar dolu olursa olsun,\niçinde küçük bir söz için yer vardır.",
-    ikinciBaslik: "burada seri yok,\nrozet yok, suçluluk yok.",
+    ikinciBaslik: "burada kontrol sende.",
     ikinciAciklama:
-      "günde tek küçük söz verirsin; tuttuğunda güneş doğar. ben günde en fazla bir kez seslenirim — üç dakikan yeter.",
+      "neyi, ne zaman hatırlatacağımı sen seçersin.\nben usulca seslenirim — asla yormam.\nher \"yaptım\" bir kanıt, her kanıtta güneş doğar.",
   },
 
-  onboarding: {
-    hedefSoru: "peki — senin için ne değişsin?",
-    hedefPlaceholder: "yazmaya başla",
-    olarakEkle: (metin: string) => `"${metin}" olarak ekle`,
+  kurulum: {
+    paketSoru: "ne hatırlatayım?",
 
-    nedenTekBaslik: "hepsini duydum.\nama tek biriyle başlayacağız.",
-    nedenTekAciklama:
-      "aynı anda çok şeyi değiştirmeye çalışanların başarısı dramatik düşer. diğerleri sırada güvende — iki hafta tutarlılıkta sıradakinin kilidi açılır.",
-    nedenTekKaynak: "— Fogg, McKeown",
+    komutlarNot: "bildirimler bu komutlardan gelir — dokunup çıkarabilirsin",
+    komutlarNotBos: "kendi komutlarını yaz",
+    komutEklePlaceholder: "+ kendi komutunu yaz",
 
-    secimSoru: "hangisiyle başlayalım?",
+    gunlerSoru: "hangi günler?",
+    gunlerNot: "istediğin kadar işaretle",
+    herGun: "her gün",
 
-    nedenKucukBaslik: "şimdi onu\nşaşırtıcı derecede küçülteceğiz.",
-    nedenKucukAciklama:
-      "küçük hedefler başarıyı artırır, çünkü beyin başarıyı tekrar ister. büyütmek hep serbest — söz hep küçük kalacak.",
-    nedenKucukKaynak: "— Fogg",
+    adetSoru: "günde kaç kez?",
+    adetNot: (tavan: number) => `günlük toplam tavan ${tavan} — fazla ses, sesi görünmez yapar`,
+    adetDigerPaketler: (n: number) => ` · diğer paketlerin ${n} hakkı kullanıyor`,
+    adetSecenek: (i: number) => `günde ${["bir", "iki", "üç", "dört", "beş"][i]} kez`,
+    tavanDolu: "bugünlük ses hakkın dolu — önce bir paketi sessize al.",
 
-    mikroBaslik: "küçük versiyonu:",
+    pencereSoru: "günün hangi aralığına?",
+    pencereEtiketleri: ["sabah · 08–12", "gün boyu · 09–21", "akşam · 18–23"],
+    gunBazliIstiyorum: "gün bazlı ayarlamak istiyorum",
+    gunBazliEtiket: "saatleri gün gün senin ayarınla",
+    pencereGunBaslik: "gün gün:",
+    pencereGunNot: "aralığa dokun, değişsin",
 
-    desteBaslik: "sana bir deste hazırladım.",
-    desteDahaKart: (n: number) => `+ ${n} kart daha`,
-    desteAciklama: (hafta: number) =>
-      `çapa yok, saat yok. boşluğun olduğunda söylersin, kartı ben çekerim. haftada ${hafta} kart yeter.`,
-    desteMikro: "desteden bir kart",
-    desteCapa: "iki dakikan olduğu an",
-
-    tetikBaslik: "çapaya gerek yok.",
-    tetikAciklamaBas: "bu hedefin çapası hayatın kendisi: ",
-    tetikAciklamaSon: " zaten en net hatırlatıcı. o an geldiğinde ben değil, durum hatırlatır.",
-
-    nedenCapaBaslik: "şimdi onu\nbir ana bağlayacağız.",
-    nedenCapaAciklama:
-      "yeni alışkanlık boşlukta unutulur. zaten yaptığın bir şeyin ardına eklersen, önceki alışkanlık zili çalar.",
-    nedenCapaKaynak: "— Clear",
-
-    capaSoru: "hangi anın ardına?",
-
-    sozKimlik: (kim: string) => `çünkü sen ${kim} birisin.`,
-    sozUygulama:
-      "benim sözüm: günde en fazla bir kez seslenirim.\nseri yok, suçluluk yok. günde üç dakikan yeter.",
-    sozBaslayalim: "söz — başlayalım",
+    ozetHerGun: "her gün",
+    ozetSatir: (adet: number, pencereMetni: string, komutSayisi: number) =>
+      `günde ${adet} kez, ${pencereMetni} — ${komutSayisi} komuttan sırayla.`,
+    ozetPencereArasinda: (etiket: string) => `${etiket} arasında`,
+    ozetKanit: "her \"yaptım\" bir kanıt: güneş doğar, sayaç büyür.",
+    baslasin: "başlasın",
   },
-
-  gunAdlari: ["pazar", "pazartesi", "salı", "çarşamba", "perşembe", "cuma", "cumartesi"],
 
   bugun: {
-    hafta: (n: number) => `hafta ${n}`,
-
-    // 🌱🕰️🐌 çapa ailesi
-    tekIsinVar: "tek işin var.",
-    bugunlukBuKadar: "bugünlük bu kadar.",
-    gunesDogar: "sözünü tuttuğunda güneş doğar",
-    yaptim: "yaptım",
-    canimIstemiyor: "bugün canım hiç istemiyor",
-
-    // 🧺 dağınık bakım
-    desteHazir: "deste hazır.",
-    birKartDahaGitti: "bir kart daha gitti.",
-    haftaSayaci: (yapilan: number, hedef: number) => `bu hafta ${yapilan}/${hedef}`,
+    bugunSayaci: (bugun: number, toplam: number) => ` · bugün ${bugun} · toplam ${toplam} kanıt`,
+    hazirOldugunda: "hazır olduğunda.",
+    guzelGidiyor: "güzel gidiyor.",
+    kucukBirSey: "küçük bir şey:",
     ikiDakikamVar: "iki dakikam var",
-    evBeniYendi: "bugün ev beni yendi",
-    cesaretKarti: "cesaret kartı · ",
-    ikiDakika: "iki dakika. fazlası serbest.",
-    baskaKart: "başka kart",
-    desteDuzenlemeOnerisi: "üst üste geri koyuyorsun — istersen desteyi birlikte düzenleyelim.",
-    ikiDakikamDahaVar: "iki dakikam daha var",
-  },
-
-  kutlama: {
-    oy: (n: number) => `${n}. oy`,
+    yaptim: "yaptım",
+    simdiOlmadi: "şimdi olmadı",
+    sonraMesaji: "sorun yok — birazdan usulca yine sorarım.",
     not: { kaynak: "Clear", metin: "her tekrar, o kişiye atılmış bir oydur." },
+    sesSatiri: "ara ara ben de seslenirim —\nsaatlerini dert etme, o benim işim.",
   },
 
-  ilkYardim: {
-    iyiKiSoyledin: "iyi ki söyledin.",
-    nasilIstememe: "nasıl bir istememe bu?",
-    secenekler: ["yorgunum", "sıkıldım", "kafam çok dolu", "sebepsiz — işte istemiyorum"],
-    vazgectim: "vazgeçtim, iyiyim",
-
-    nefesYonerge: "büyürken al, küçülürken ver.\nbir dakika buradayım.",
-    birazDahaIyiyim: "biraz daha iyiyim",
-
-    receteler: {
-      yorgun: {
-        baslik: "o zaman bugün izin günü tarifi.",
-        metin: "tarif değil, sadece hazırlığı. sayılır — söz.",
-      },
-      sikildim: {
-        baslik: "sıkıcı olan tarif, sen değilsin.",
-        metin: "bugün sevdiğin bir şeyle eşleştir: podcast, müzik, ne iyi geliyorsa.",
-      },
-      istemiyorum: {
-        baslik: "iki dakika anlaşması.",
-        metin: "sadece başla. iki dakika sonra bırakabilirsin — gerçekten. gelmese de anlaşma geçerli.",
-      },
-    },
-    deniyorum: "tamam, deniyorum",
-    halaOlmuyor: "hâlâ olmuyor",
-
-    izinBaslik: "bugünü boş bırakalım.",
-    izinMetin: "bazı günler böyledir. yarın buradayım —\naynı an, aynı küçük tarif.",
-    gorusuruz: "görüşürüz",
+  gecmis: {
+    baslik: "geçmiş",
+    altBaslik: (gun: number, kanit: number) => `son ${gun} gün · ${kanit} kanıt`,
+    solEtiket: "iki hafta önce",
+    sagEtiket: "bugün",
+    oran: (gun: number, dolu: number) => `${gun} günün ${dolu}'ünde en az bir kanıt bıraktın.`,
+    kapanis: "boş günler kayıp değil — sadece sessiz.",
   },
 
-  ornekHedefler: [
-    "spora başlamak",
-    "kitap okumak",
-    "evi toplamak",
-    "şekeri azaltmak",
-    "öfkelenince sakin kalmak",
-  ],
-
-  capalar: [
-    "kahve makinesi çalışırken",
-    "bebek uyuyunca",
-    "diş fırçasından sonra",
-    "telefonu şarja takınca",
-  ],
-
-  // arketiplerin kullanıcıya görünen yüzü
-  arketip: {
-    baslama: {
-      ad: "başlama",
-      kim: "sözünü tutan",
-      mikro: ["2 dakikalık versiyonu", "sadece hazırlığı yap", "ilk küçük adımı at"],
-    },
-    birakma: {
-      ad: "bırakma",
-      kim: "iradesine güvenen",
-      mikro: ["istek gelince bir bardak su iç", "10 dakika ertele", "elini başka şeyle meşgul et"],
-    },
-    azaltma: {
-      ad: "azaltma",
-      kim: "dengesini kuran",
-      mikro: ["porsiyonu yarıya böl", "önce alternatifi dene", "limiti bir tık düşür"],
-    },
-    duzenlilik: {
-      ad: "düzen",
-      kim: "ritmini bulan",
-      mikro: ["aynı ana sabitle", "hazırlığı akşamdan yap", "bir bardak suyla başlat"],
-    },
-    erteleme: {
-      ad: "erteleme yenme",
-      kim: "başlayabilen",
-      mikro: ["sadece 2 dakika başla", "dosyayı aç, o kadar", "ilk cümleyi yaz"],
-    },
-    duygu: {
-      ad: "duygu anı",
-      kim: "fırtınada sakin kalan",
-      mikro: ["üç derin nefes", "odayı değiştir", "içinden ona kadar say"],
-    },
-    daginik: {
-      ad: "dağınık bakım",
-      kim: "evine sahip çıkan",
-      mikro: [] as string[],
-    },
+  paketler: {
+    baslik: "paketlerim",
+    sesSayaci: (kullanilan: number, tavan: number) => `günlük ses: ${kullanilan}/${tavan}`,
+    gundeAdet: (n: number) => `günde ${n}`,
+    sessizeAl: "sessize al",
+    sesiAc: "sesi aç",
+    yeniPaket: "+ yeni paket",
   },
 
-  // tetikli arketiplerde "çapa" yerine geçen an
-  tetik: {
-    duygu: "o duygu yükseldiği an",
-    birakma: "istek geldiği an",
-    azaltma: "istek geldiği an",
+  kimlik: {
+    baslik: "sen sözünü tutan\nbirisin.",
+    kanit: "kanıt",
+    altYazi: "her \"yaptım\" buraya bir güneş bıraktı",
+    bosIddia: "şimdilik bu bir iddia.\nbirlikte kanıta çevireceğiz.",
+    bosNot: "ilk kanıt için tek \"yaptım\" yeter.",
+    bugunGit: "bugüne git",
   },
+
+  alanlar: ["bugün", "geçmiş", "paketler", "kimlik"] as const,
+
+  // gün etiketleri: 0 = pazartesi ... 6 = pazar
+  gunKisa: ["pzt", "sal", "çar", "per", "cum", "cmt", "paz"],
+  gunAdlari: ["pazartesi", "salı", "çarşamba", "perşembe", "cuma", "cumartesi", "pazar"],
 } as const;
-
-export type ArketipId = keyof typeof tr.arketip;
