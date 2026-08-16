@@ -34,3 +34,24 @@ Mevcut src/ dosyaları eski vizyondan kalanlar içerebilir (engine/arketip, scre
 
 ## Kaynaklar
 docs/prototip-v28.jsx (REFERANS) · data/katalog-daginik.json (ev & minik işler komut kaynağı) · docs/motivasyon-kutuphanesi.md (bildirim metni tonu için) · docs/arsiv/ (eski motor — uygulama, sadece tarih)
+
+
+## BAHÇE KATMANI (2026-08 eklendi — oyunlaştırma vizyonu)
+Uygulamaya izometrik bir bahçe metası ekleniyor: görevler bahçeyi büyütür. Referans: docs/bahce-ekonomi-prototip.jsx (oynanabilir), stil referansı kullanıcının Gemini üretimleri (assets/bahce/), üretim listesi docs/bahce-varlik-listesi.md.
+
+### Ekonomi anayasası (pazarlıksız kurallar)
+1. **İki para:** 🌰 tohum = görevden gelir (her "yaptım" +2, günün ilki +1 bonus; tavan 5 görevle uyumlu), canlıya harcanır. 🪙 para = SADECE hasattan gelir, dekora/ağaca/alan açmaya harcanır.
+2. **Hasat kuralı:** sebze hasadı ektiğin tohumu AYNEN geri verir + üstüne para kârı (ör. domates 6🌰 → hasatta 6🌰 + 4🪙). Çiçekler kalıcı güzellik (hasat edilmez), dekorlar kalıcı süs.
+3. **Zaman değil emek büyütür:** bitkiler yalnız "yaptım" ile aşama atlar (tohum→filiz→ara→olgun). Bekleme sayacı, gerçek-zaman zamanlayıcı YASAK.
+4. **Sulama mekaniği YOK; görev = su.** ~2 gün hiç kanıt yoksa bitkiler UYUR (💤 solgun), ölmez; ilk görevle hep birden uyanır. Ceza/kayıp dili yasak.
+5. **Tohum verilmez, seçilir:** kullanıcı dükkândan kendi alır. Hediye tohum yalnız nadir anlarda: haftalık sandık, hoş geldin, mevsim kutlaması.
+6. **Sıralı açılış:** dükkân sade başlar (ayçiçeği + domates + 2 ucuz dekor). Yeni türler toplam kanıt eşikleriyle açılır (lavanta 15, kuş banyosu 25, kabak 30...). Kilitliler dükkânda "🔒 12/15 kanıt" ilerlemesiyle GÖRÜNÜR (hedef hissi). Gül yalnız sandıktan.
+7. **Haftalık sandık:** 7 günün 5'inde en az bir kanıt → sandık (+para + nadir tohum). ORAN dili, seri değil; 2 gün kaçırma hakkı baştan var.
+8. **Bölge açma:** bahçe küçük başlar; yabani-otlu kilitli bölgeler parayla açılır (orta vadeli hedef).
+9. **Paket-tohum bağı (v2, MVP'de YAPMA):** koleksiyon rozetleri üzerinden ("30 kitap görevi → altın ayçiçeği"); katı tür kilidi asla.
+
+### Görsel üretim hattı
+İskelet ve sahne kodu (izo karolar, derinlik sıralama, ekim/büyüme/hasat) koddadır; bitki/dekor görselleri kullanıcının Gemini (nano banana) üretimi PNG sprite'lardır. Bitkiler ÖNDEN dik sprite, zemine yayılanlar (gölet, yol, çit, köprü) İZO perspektif üretilir. Arka plan temizleme scripti scripts/ altında tutulur.
+
+### Bahçe MVP sırası
+1. İzo sahne + ekim/büyüme/hasat (prototipten porte) → 2. iki cüzdan + dükkân (kilit eşikleriyle) → 3. "yaptım" entegrasyonu (mevcut bugün ekranı bahçeyi besler) → 4. haftalık sandık → 5. uyku/uyanma → 6. bölge açma. Sprite'lar hazır oldukça SVG yer-tutucular değişir.
