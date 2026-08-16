@@ -9,12 +9,21 @@ type Props = {
   ton?: string;
   boyut?: number;
   serif?: boolean;
+  altCizgi?: boolean;
   stil?: TextStyle;
 };
 
-export function Word({ children, onPress, ton = renk.sun, boyut = 16, serif = false, stil }: Props) {
+export function Word({ children, onPress, ton = renk.sun, boyut = 16, serif = false, altCizgi = false, stil }: Props) {
   return (
-    <Pressable onPress={onPress} hitSlop={10}>
+    <Pressable
+      onPress={onPress}
+      hitSlop={10}
+      style={
+        altCizgi
+          ? { borderBottomWidth: 1, borderBottomColor: ton, paddingBottom: 3, alignSelf: "center" }
+          : undefined
+      }
+    >
       <Text
         style={[
           {
