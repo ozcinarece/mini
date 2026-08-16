@@ -6,6 +6,7 @@ import React, { useEffect, useState } from "react";
 import { Pressable, ScrollView, Text, View } from "react-native";
 import { SafeAreaProvider, SafeAreaView } from "react-native-safe-area-context";
 import * as depo from "./src/db/depo";
+import * as bildirim from "./src/engine/bildirim";
 import { tr } from "./src/i18n/tr";
 import { Bugun } from "./src/screens/Bugun";
 import { Gecmis } from "./src/screens/Gecmis";
@@ -41,6 +42,11 @@ export default function App() {
 
   const hazir = abonelikler.length > 0;
   const gunlukToplam = abonelikler.filter((a) => a.aktif).reduce((s, a) => s + a.adet, 0);
+
+  // tarife her açılışta ve abonelikler değiştikçe tazelenir (saatler asla gösterilmez)
+  useEffect(() => {
+    if (abonelikler.length > 0) void bildirim.planla(abonelikler);
+  }, [abonelikler]);
 
   const kanitEkle = (komut: string, paketAd: string) => {
     depo.kanitEkle(komut, paketAd);

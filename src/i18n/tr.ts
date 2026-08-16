@@ -89,6 +89,10 @@ export const tr = {
     bugunGit: "bugüne git",
   },
 
+  bildirim: {
+    kanalAdi: "usulca sesler",
+  },
+
   alanlar: ["bugün", "geçmiş", "paketler", "kimlik"] as const,
 
   // gün etiketleri: 0 = pazartesi ... 6 = pazar
