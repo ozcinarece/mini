@@ -55,3 +55,12 @@ Uygulamaya izometrik bir bahçe metası ekleniyor: görevler bahçeyi büyütür
 
 ### Bahçe MVP sırası
 1. İzo sahne + ekim/büyüme/hasat (prototipten porte) → 2. iki cüzdan + dükkân (kilit eşikleriyle) → 3. "yaptım" entegrasyonu (mevcut bugün ekranı bahçeyi besler) → 4. haftalık sandık → 5. uyku/uyanma → 6. bölge açma. Sprite'lar hazır oldukça SVG yer-tutucular değişir.
+
+
+## ONBOARDING v2 — "bahçe anlatısı" (2026-08, uygulama baştan)
+Referans: docs/bahce-onboarding-prototip.jsx. Akış: kapı ("burası senin bahçen") → renk-alan bağı (sarı=düzen, kırmızı=gelişim, mavi=huzur, mor=odak, turuncu=minik işler) → güvence ("çiçek ölmez, uyur" — kategori seçiminden ÖNCE verilir) → kategori seçimi: ana+alt kategoriler akordeon, yanında CANLI bahçe önizlemesi (seçtikçe o rengin kümesi belirir; "ister tek alana yoğunlaş ister hepsine — bahçe senin") → hoş geldin hediyesi: seçilen her alandan 1 tohum otomatik ekilir, filizler önizlemede → nasıl çalışır (3 satır: 🌙 günlük hedef=tohum · 💧 mini iş=o alanın çiçeği sulanır · 🧺 topla=dekor) → ses tercihi (tavan 5 notu) → "işte bahçen" + ilk görev daveti.
+Kurallar: ekran başına tek fikir, dokun-geç ritmi, ilerleme çizgisi üstte, "geri" hep var. Tüm görseller Gemini üretimi; yaşayan liste: docs/bahce-varlik-listesi.md (26-40 arası onboarding/UI kalemleri).
+
+## BACKOFFICE (yönetim paneli)
+Referans: docs/backoffice-prototip.jsx. Mimari: panel tek bir data/oyun-config.json düzenler; uygulama ondan beslenir. Bölümler: panel(metrik) · paketler&görevler(kimlik/renk/aile, yoklama sorusu, komut CRUD) · ek görevler(haftalık/özel/mevsimlik ödüller) · bahçe kataloğu(tip/aile/fiyat/aşama/💧su-aşama dizisi/gelir/eşik/sprite durumu) · ekonomi(tüm sayılar + kilitli ilkeler) · ilerleme&bölgeler · bildirimler · dışa aktar.
+Kritik kurallar: (1) 💧 SU KATEGORİYE AKAR — görev hangi paketten geldiyse o ailenin bitkilerini büyütür, aile boşsa depoya. (2) Su gereksinimi bitki+aşama bazlı yönetilir (su dizisi) + kademe başına ek su parametresi. (3) BİLDİRİMLER GÖREV BAZLI: her komutun kendi metin varyantları (rotasyonlu), penceresi ve günleri panelden girilir; varyant yoksa yedek şablon. Panel ayarları kullanıcının kurulumuyla KESİŞTİRİLİR, asla genişletmez; tavan 5 delinemez. (4) Yasak-sözlük linter'ı tüm metin alanlarında canlı.
