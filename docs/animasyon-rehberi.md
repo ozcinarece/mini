@@ -9,8 +9,8 @@ Sprite HEP dipten sabitlenir: transformOrigin/anchor = alt-orta. Kurallar:
 - ekim: scale 0 → 1.18 → 0.94 → 1, ~0.8s, yaylı eğri (tek zıplama, jöle değil).
 - sulama sevinci: squash&stretch scale(1.06,.92)→(.96,1.07), 0.7s + tepeden düşen tek damla (kod çizimi, 0.8s).
 - dokunma (gıdık): rotate -4°→3° + hafif squash, 0.5s — bitkiye dokununca kişilik hissi.
-- hasat: squash(1.12,.8) → yukarı fırla + döner + küçülür + kaybol, 0.9s; ardından aynı karede yeni kademe "ekim" animasyonuyla doğar.
-- uyku: grayscale(.85)+brightness(.92) + rotate 10° + 4px çökme, 1.2s geçiş; uyanış tersi + ardından tek "sevinç".
+- HASAT (v2 — durum sprite'lı koreografi): silkele (0.45s) → ÜRÜN/BAŞ sprite'ları kopar (2-3 adet, kademeli 0.12s arayla), önce yukarı kavis sonra CÜZDANA uçar (bezier, 1.05s, küçülerek), kese zıplar (+ödül) → gövde çöker-solar (0.5s) + toprak tozu parçacıkları → yeni kademe filizi zıplayarak doğar. GEREKLİ VARLIK: her hasatlanabilir bitkinin "kopmuş ürün/çiçek başı" sprite'ı (tekil, şeffaf).
+- SOLMA/UYKU (v2 — çift sprite): sağlıklı ↔ SOLGUN sprite çapraz-solması (1.6s) + boyun bükme rotate 9° (1.8s) + düşen tek yaprak (zigzag, 2.2s) + süzülen 💤 döngüsü. Uyanış: sıcak ışık parlaması (1.1s) + doğrulma + sevinç esnemesi. GEREKLİ VARLIK: her bitkinin olgun halinin "solgun versiyonu" (baş düşük, taçlar kapalı, soluk renkler).
 - kademe K3 ışıltısı: 2-3 altın nokta, yavaş parlayıp sönme (2.6s döngü).
 
 ## Katman 2 — Parçacıklar (kod)

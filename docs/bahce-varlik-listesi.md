@@ -39,6 +39,12 @@
 27. renk-aile tanıtım kümeleri (5 renk, onboarding E2)
 28. mevsim varyasyonları (sonbahar yaprakları, kış örtüsü — çok ileri)
 
+## DURUM SPRITE'LARI (animasyon rehberi v2 gereği — amiral bitkiler için P1'e dahil)
+Her hasatlanabilir/uyuyabilir bitki için 2 ek üretim:
+- **solgun hal**: "the same [ÇİÇEK] in a wilted, sleepy state: drooping head, slightly closed petals, muted desaturated colors, same style, cream background"
+- **kopmuş ürün/baş**: "just the [bloom head / single tomato fruit] of the same plant, isolated, no stem, same style, cream background"
+P1'de öncelik: ayçiçeği (baş+solgun), domates (meyve+solgun). Diğerleri sprite'ları gelirken eklenir.
+
 ## PROMPT KALIPLARI
 **Bitki (4 aşama):** "Using this image as exact style reference (same line art, colors, top-left lighting): a [ÇİÇEK], shown in 4 growth stages side by side — seed mound, small sprout with two leaves, budding stage, full bloom. Isolated on a plain solid cream background (#F5F0E4), centered, no text."
 **İzo zemin/dekor:** "...: a [VARLIK], drawn in isometric view, 45-degree angle from above, matching the ground perspective of the reference garden. Plain cream background, no text."
