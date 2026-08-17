@@ -1,47 +1,44 @@
-// Yerel kalıcılık — expo-sqlite (vizyon 2.0: paket abonelikleri + kanıtlar).
-// Kaçırma diye bir kayıt yoktur; yalnızca yapılanlar ("yaptım" = kanıt) saklanır.
+// Yerel kalıcılık — expo-sqlite (bahçe vizyonu v3).
+// Kaçırma diye bir kayıt yoktur; yalnız yapılanlar ("yaptım" = kanıt) ve bahçe durumu saklanır.
 
 import * as SQLite from "expo-sqlite";
-import type { PaketId } from "../data/paketler";
+import type { KategoriId } from "../data/kategoriler";
 
-export type Abonelik = {
-  id: number;
-  paketId: PaketId;
-  ad: string;
-  komutlar: string[];
-  gunler: number[]; // 0 = pazartesi ... 6 = pazar
-  adet: number;
-  pencere: number | null; // PENCERELER indeksi; null = gün bazlı
-  pencereGun: Record<number, number> | null; // gün indeksi -> pencere indeksi
-  aktif: boolean;
+export type Secim = Partial<Record<KategoriId, string[]>>; // kategori -> seçili alt kategori id'leri
+
+export type Cuzdan = { tohum: number; para: number };
+
+export type Kare = {
+  c: number;
+  r: number;
+  varlik: string; // BAHCE_KATALOG anahtarı
+  asama: number | null; // canlılarda 0..max, dekorda null
 };
 
-export type YeniAbonelik = Omit<Abonelik, "id" | "aktif">;
+export type SesTercihi = "gunde1" | "gunde3" | "hic";
 
 const db = SQLite.openDatabaseSync("minik.db");
 
 db.execSync(`
   PRAGMA journal_mode = WAL;
-  DROP TABLE IF EXISTS ayarlar;
-  DROP TABLE IF EXISTS oylar;
-  DROP TABLE IF EXISTS kart_gecmisi;
-  CREATE TABLE IF NOT EXISTS abonelikler (
-    id INTEGER PRIMARY KEY AUTOINCREMENT,
-    paket_id TEXT NOT NULL,
-    ad TEXT NOT NULL,
-    komutlar TEXT NOT NULL,
-    gunler TEXT NOT NULL,
-    adet INTEGER NOT NULL,
-    pencere INTEGER,
-    pencere_gun TEXT,
-    aktif INTEGER NOT NULL DEFAULT 1
+  DROP TABLE IF EXISTS abonelikler;
+  CREATE TABLE IF NOT EXISTS ayarlar (
+    anahtar TEXT PRIMARY KEY,
+    deger TEXT NOT NULL
+  );
+  CREATE TABLE IF NOT EXISTS kareler (
+    c INTEGER NOT NULL,
+    r INTEGER NOT NULL,
+    varlik TEXT NOT NULL,
+    asama INTEGER,
+    PRIMARY KEY (c, r)
   );
   CREATE TABLE IF NOT EXISTS kanitlar (
     id INTEGER PRIMARY KEY AUTOINCREMENT,
     gun TEXT NOT NULL,
     zaman TEXT NOT NULL,
     komut TEXT NOT NULL,
-    paket_ad TEXT NOT NULL
+    kategori TEXT NOT NULL
   );
   CREATE TABLE IF NOT EXISTS son_komutlar (
     id INTEGER PRIMARY KEY AUTOINCREMENT,
@@ -60,70 +57,71 @@ export function bugunIso(): string {
   return isoGun(new Date());
 }
 
-// 0 = pazartesi ... 6 = pazar (JS getDay: 0 = pazar)
-export function bugunGunIdx(): number {
-  return (new Date().getDay() + 6) % 7;
-}
+// ── ayarlar (JSON anahtar-değer) ──
 
-type AbonelikSatiri = {
-  id: number;
-  paket_id: string;
-  ad: string;
-  komutlar: string;
-  gunler: string;
-  adet: number;
-  pencere: number | null;
-  pencere_gun: string | null;
-  aktif: number;
-};
-
-function satirdanAbonelik(s: AbonelikSatiri): Abonelik {
-  return {
-    id: s.id,
-    paketId: s.paket_id as PaketId,
-    ad: s.ad,
-    komutlar: JSON.parse(s.komutlar),
-    gunler: JSON.parse(s.gunler),
-    adet: s.adet,
-    pencere: s.pencere,
-    pencereGun: s.pencere_gun ? JSON.parse(s.pencere_gun) : null,
-    aktif: s.aktif === 1,
-  };
-}
-
-export function abonelikleriYukle(): Abonelik[] {
-  return db
-    .getAllSync<AbonelikSatiri>("SELECT * FROM abonelikler ORDER BY id")
-    .map(satirdanAbonelik);
-}
-
-export function abonelikEkle(a: YeniAbonelik): Abonelik {
-  const sonuc = db.runSync(
-    `INSERT INTO abonelikler (paket_id, ad, komutlar, gunler, adet, pencere, pencere_gun, aktif)
-     VALUES (?, ?, ?, ?, ?, ?, ?, 1)`,
-    a.paketId,
-    a.ad,
-    JSON.stringify(a.komutlar),
-    JSON.stringify(a.gunler),
-    a.adet,
-    a.pencere,
-    a.pencereGun ? JSON.stringify(a.pencereGun) : null
+function ayarOku<T>(anahtar: string): T | null {
+  const s = db.getFirstSync<{ deger: string }>(
+    "SELECT deger FROM ayarlar WHERE anahtar = ?",
+    anahtar
   );
-  return { ...a, id: Number(sonuc.lastInsertRowId), aktif: true };
+  if (!s) return null;
+  try {
+    return JSON.parse(s.deger) as T;
+  } catch {
+    return null;
+  }
 }
 
-export function abonelikAktifDegistir(id: number, aktif: boolean): void {
-  db.runSync("UPDATE abonelikler SET aktif = ? WHERE id = ?", aktif ? 1 : 0, id);
+function ayarYaz(anahtar: string, deger: unknown): void {
+  db.runSync(
+    "INSERT OR REPLACE INTO ayarlar (anahtar, deger) VALUES (?, ?)",
+    anahtar,
+    JSON.stringify(deger)
+  );
 }
 
-export function kanitEkle(komut: string, paketAd: string): void {
+export const secimOku = (): Secim | null => ayarOku<Secim>("secim");
+export const secimYaz = (s: Secim): void => ayarYaz("secim", s);
+
+export const sesTercihiOku = (): SesTercihi => ayarOku<SesTercihi>("ses") ?? "gunde3";
+export const sesTercihiYaz = (s: SesTercihi): void => ayarYaz("ses", s);
+
+export const cuzdanOku = (): Cuzdan => ayarOku<Cuzdan>("cuzdan") ?? { tohum: 0, para: 0 };
+export const cuzdanYaz = (c: Cuzdan): void => ayarYaz("cuzdan", c);
+
+export const bolgeAcikMi = (): boolean => ayarOku<boolean>("bolge") ?? false;
+export const bolgeAc = (): void => ayarYaz("bolge", true);
+
+// ── bahçe kareleri ──
+
+export function kareleriYukle(): Kare[] {
+  return db.getAllSync<Kare>("SELECT c, r, varlik, asama FROM kareler");
+}
+
+export function kareYaz(k: Kare): void {
+  db.runSync(
+    "INSERT OR REPLACE INTO kareler (c, r, varlik, asama) VALUES (?, ?, ?, ?)",
+    k.c,
+    k.r,
+    k.varlik,
+    k.asama
+  );
+}
+
+export function kareSil(c: number, r: number): void {
+  db.runSync("DELETE FROM kareler WHERE c = ? AND r = ?", c, r);
+}
+
+// ── kanıtlar ──
+
+export function kanitEkle(komut: string, kategori: KategoriId): void {
   const simdi = new Date();
   db.runSync(
-    "INSERT INTO kanitlar (gun, zaman, komut, paket_ad) VALUES (?, ?, ?, ?)",
+    "INSERT INTO kanitlar (gun, zaman, komut, kategori) VALUES (?, ?, ?, ?)",
     isoGun(simdi),
     simdi.toISOString(),
     komut,
-    paketAd
+    kategori
   );
 }
 
@@ -138,7 +136,7 @@ export function bugunKanit(): number {
   );
 }
 
-// son N günün kanıt sayıları, eskiden yeniye (bugün dahil)
+// son N günün kanıt sayıları, eskiden yeniye (bugün dahil) — geçmiş/uyku için
 export function gunlukKanitlar(gunSayisi: number): number[] {
   const satirlar = db.getAllSync<{ gun: string; n: number }>(
     "SELECT gun, COUNT(*) AS n FROM kanitlar GROUP BY gun"
@@ -153,7 +151,8 @@ export function gunlukKanitlar(gunSayisi: number): number[] {
   return sonuc;
 }
 
-// rotasyon kuralı için: son çekilen komutlar (yeniden eskiye)
+// ── komut rotasyonu ──
+
 export function sonKomutlar(adet: number): string[] {
   return db
     .getAllSync<{ komut: string }>("SELECT komut FROM son_komutlar ORDER BY id DESC LIMIT ?", adet)
