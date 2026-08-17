@@ -45,3 +45,30 @@ export const bosluk = {
   sayfaYatay: 32,
   maxGenislik: 290,
 } as const;
+
+// ── BAHÇE paleti (2026-08 bahçe vizyonu) ──
+// Bahçe ekranları kendi dilini konuşur: açık yeşil zemin, Baloo 2 + Nunito,
+// yumuşak hap butonlar. BOŞLUK tokenları eski ekran dili için yukarıda durur.
+export const bahce = {
+  zemin: ["#F6FAEE", "#E7F0D9"] as const,
+  ink: "#41502F",
+  faint: "#8CA06B",
+  dim: "#AFC08F",
+  yesil: "#7CA24D",
+  koyu: "#5F8138",
+  beyaz: "#FFFFFF",
+  kartCizgi: "#E9EEDD",
+  cipZemin: "#F3F6EB",
+  turuncu: "#E8913C",
+  turuncuKoyu: "#C4741F",
+  altin: "#8A6B2E",
+  kilitliMetin: "#A9987F",
+} as const;
+
+export const bahceFont = {
+  baslik: "Baloo2_700Bold",
+  govde: "Nunito_600SemiBold",
+  govdeKalin: "Nunito_700Bold",
+  govdeEnKalin: "Nunito_800ExtraBold",
+} as const;
+
