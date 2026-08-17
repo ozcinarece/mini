@@ -3,7 +3,17 @@
 // saatler KULLANICIYA ASLA GÖSTERİLMEZ. Günlük toplam tavan 5 (güvenlik kelepçesi).
 
 import { GUNLUK_TAVAN, PENCERELER } from "../data/paketler";
-import type { Abonelik } from "../db/depo";
+
+// tarife girdisi: bir bildirim kaynağı (bahçe vizyonunda görev havuzu)
+export type TarifeGirdisi = {
+  ad: string;
+  komutlar: string[];
+  gunler: number[]; // 0 = pazartesi ... 6 = pazar
+  adet: number;
+  pencere: number | null; // PENCERELER indeksi
+  pencereGun: Record<number, number> | null;
+  aktif: boolean;
+};
 
 export type PlanMaddesi = {
   tarih: Date;
@@ -39,7 +49,7 @@ function slotZamani(
 // simdi'den itibaren gunSayisi gün için plan üretir (geçmiş saatler atlanır).
 // Rotasyon: plan boyunca son 3 komut tekrar etmez; başlangıç geçmişi DB'den verilir.
 export function planUret(
-  abonelikler: Abonelik[],
+  abonelikler: TarifeGirdisi[],
   simdi: Date,
   gunSayisi: number,
   baslangicGecmisi: string[] = [],
@@ -51,7 +61,7 @@ export function planUret(
   const plan: PlanMaddesi[] = [];
   const son: string[] = [...baslangicGecmisi].slice(0, 3);
 
-  const komutSec = (a: Abonelik): string => {
+  const komutSec = (a: TarifeGirdisi): string => {
     let havuz = a.komutlar.filter((k) => !son.includes(k));
     if (havuz.length === 0) havuz = a.komutlar;
     const k = havuz[Math.floor(rastgele() * havuz.length)];
@@ -75,15 +85,15 @@ export function planUret(
         if (t.getTime() <= simdi.getTime()) continue;
         gunMaddeleri.push({ tarih: t, komut: "", paketAd: a.ad });
         // komut, zaman sırasına göre aşağıda atanır (rotasyon doğru işlesin)
-        (gunMaddeleri[gunMaddeleri.length - 1] as PlanMaddesi & { _a?: Abonelik })._a = a;
+        (gunMaddeleri[gunMaddeleri.length - 1] as PlanMaddesi & { _a?: TarifeGirdisi })._a = a;
       }
     }
 
     gunMaddeleri.sort((x, y) => x.tarih.getTime() - y.tarih.getTime());
     // günlük tavan: sihirbaz zaten toplam adet ≤ 5 tutar; yine de kelepçe
     for (const m of gunMaddeleri.slice(0, GUNLUK_TAVAN)) {
-      m.komut = komutSec((m as PlanMaddesi & { _a: Abonelik })._a);
-      delete (m as PlanMaddesi & { _a?: Abonelik })._a;
+      m.komut = komutSec((m as PlanMaddesi & { _a: TarifeGirdisi })._a);
+      delete (m as PlanMaddesi & { _a?: TarifeGirdisi })._a;
       plan.push(m);
     }
   }
