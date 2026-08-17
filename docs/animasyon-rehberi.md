@@ -31,3 +31,10 @@ Ayçiçeği/gül için gövde ve baş AYRI üretilir; baş, gövdeden bağımsı
 - Aynı anda en fazla 1 event animasyonu + idle'lar. Event sırasında o bitkinin idle'ı durur.
 - Ekran dışı bitkilerin idle'ı durdurulur (pil).
 - Tüm süreler ve eğriler tek dosyada: src/animasyon.ts (token gibi).
+
+
+## NİHAİ KARAR — hibrit animasyon stratejisi (2026-08, Ece onayı)
+BÜYÜK ANLAR (solma, uyanma, ileride hasat) = **Veo flipbook**: kullanıcı Gemini/Veo'da image-to-video üretir ("static camera" şart), scripts/veo-flipbook-hatti.py kareleri çıkarır-temizler-hizalar, uygulama ~11fps PNG dizisi oynatır. Solma son karede SABİTLENİR; uyanma = aynı kareler TERSTEN (ayrı üretim gerekmez). İlk gerçek varlık repoda: assets/bahce/aycicegi-solma/ (12 kare).
+SÜREKLİ & ETKİLEŞİMLİ hareketler (rüzgar salınımı, ekim zıplaması, dokunma esnemesi, parçacıklar) = KOD (bu rehberin katman 1-2 spesifikasyonları aynen geçerli).
+Bükülme motoru (dilim zinciri) rafa kalktı: Veo kalitesi form değişimini daha iyi veriyor; dilim tekniği yalnız hafif rüzgar esnemesi için opsiyonel cila olarak durabilir.
+Veo prompt kuralları: static camera / tek eylem / düz krem zemin / no sound; filigran köşede kalır, kırpmada atılır.
