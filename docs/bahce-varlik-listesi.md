@@ -1,57 +1,48 @@
-# Bahçe · Gemini varlık üretim listesi
+# Bahçe & Uygulama · Gemini Varlık Üretim Listesi (YAŞAYAN DOKÜMAN)
 
-Stil referansı: kullanıcının ürettiği büyük bahçe görseli (her üretimde AYNI sohbette referans olarak ekle).
-Kural: her varlık TEK TEK, düz krem zeminde (#F5F0E4), yüksek çözünürlük. Prompt kalıbı:
-"Using this image as exact style reference (same line art, colors, top-left lighting): [VARLIK], isolated on a plain solid cream background, centered, no text."
+> Her üretimde stil referansını (büyük bahçe görseli) AYNI sohbete ekle. Tek tek üret, düz krem zemin (#F5F0E4), yüksek çözünürlük, no text.
+> Prompt kalıpları en altta. Durum: ⬜ bekliyor · 🟡 üretildi, temizlenecek · ✅ repoda (assets/bahce/)
 
-## Önden (dik sprite) — bitkiler
-Her bitki için ek prompt: "...shown in 4 growth stages side by side: seed mound, small sprout, closed bud/green stage, full grown."
-1. ayçiçeği (4 aşama) — başlangıç çiçeği
-2. lale (4 aşama)
-3. lavanta (4 aşama) — 15 kanıt eşiği
-4. gül (4 aşama) — haftalık sandık ödülü ✨
-5. domates (4 aşama, son aşama kırmızı meyveli) — başlangıç sebzesi
-6. kabak (4 aşama) — 30 kanıt eşiği
-7. havuç sırası (4 aşama)
-8. papatya (4 aşama)
+## 🔴 P1 — MVP BAŞLANGIÇ SETİ (bunlar olmadan bahçe açılmaz, ~15 üretim)
+| # | varlık | tip | not | durum |
+|---|--------|-----|-----|-------|
+| 1 | ayçiçeği · 4 aşama | önden | sarı aile amiral gemisi | 🟡 (tek hali var) |
+| 2 | papatya · 4 aşama | önden | sarı, ucuz başlangıç | ⬜ |
+| 3 | gül · 4 aşama | önden | kırmızı aile + sandık ödülü | ⬜ |
+| 4 | nilüfer · 3 aşama | önden/su | mavi aile | ⬜ |
+| 5 | lavanta · 4 aşama | önden | mor aile | ⬜ |
+| 6 | kadife çiçeği · 4 aşama | önden | turuncu aile | ⬜ |
+| 7 | domates · 4 aşama | önden | ilk sebze (hasat ekonomisi) | ⬜ |
+| 8 | çim karosu (2 ton) + toprak karosu | izo | zemin seti | ⬜ |
+| 9 | yabani ot karosu · 2 varyasyon | izo | kilitli bölge | ⬜ |
+| 10 | çit parçası (düz + köşe) | izo | ilk dekor | ⬜ |
+| 11 | fener (ışıklı) | önden | ilk premium dekor | ⬜ |
+| 12 | KAPAK: olgun hedef bahçe | sahne | onboarding E1 + mağaza | ✅ (eldeki büyük bahçe) |
+| 13 | BAŞLANGIÇ bahçesi (aynı arsa, boş) | sahne | onboarding sonu | ⬜ |
+| 14 | uyuyan çiçek yakın plan (💤 şefkatli) | sahne | güvence ekranı | ⬜ |
+| 15 | uygulama ikonu · 2-3 aday | ikon | tek çiçekli minik ada | ⬜ |
 
-## İzo perspektif — zemine yayılanlar
-Ek prompt: "...drawn in isometric view, 45-degree angle from above, matching the ground perspective of the reference garden."
-9. çim karosu (2 ton) + toprak karosu + taş yol karosu
-10. gölet (nilüfer + sazlarla, 2 boy)
-11. ahşap köprü
-12. çit parçası (düz + köşe)
-13. yabani ot karosu (kilitli bölge için, 2-3 varyasyon)
+## 🟠 P2 — ZENGİNLEŞTİRME (ilk sürümden sonra, ~12 üretim)
+16. sarı lale · kırmızı lale · gerbera (aile çeşitliliği, 4'er aşama)
+17. mavi kardelen · mor sümbül · turuncu gerbera
+18. kabak · havuç sırası (sebze çeşitliliği)
+19. gölet (2 boy) + ahşap köprü (izo)
+20. büyük ağaç · elma ağacı (meyveli/meyvesiz)
+21. bank · kuş banyosu · kuş evi · çalı
+22. taş yol karosu + taş grubu + mantar ailesi
 
-## Önden — dekor & yapılar
-14. büyük ağaç · 15. elma ağacı (meyveli/meyvesiz 2 hal) · 16. çalı (çiçekli)
-17. bank · 18. kuş banyosu (25 kanıt eşiği) · 19. kuş evi (direkli)
-20. fener (ışıklı) · 21. arı kovanı · 22. saksı/testi seti · 23. sulama kabı · 24. taş grubu · 25. mantar ailesi
+## 🟡 P3 — CİLA & UI (kod-çizimi de idare eder, Gemini güzelleştirir)
+23. haftalık sandık: kapalı + açılmış (ışık saçan)
+24. tohum kesesi · para kesesi · su damlası/depo ikonları
+25. dükkân raf arka planı (ahşap sıcak)
+26. ekim işareti (toprakta ışıldayan yuva) · kademe ışıltı parçacıkları
+27. renk-aile tanıtım kümeleri (5 renk, onboarding E2)
+28. mevsim varyasyonları (sonbahar yaprakları, kış örtüsü — çok ileri)
 
-## İşleme hattı
-Üret → buraya yükle veya Claude'a gönder → arka plan otomatik temizlenir (kırpma scripti: scripts/sprite-temizle) → assets/bahce/ altına PNG → iskelet sahneye bağlar.
+## PROMPT KALIPLARI
+**Bitki (4 aşama):** "Using this image as exact style reference (same line art, colors, top-left lighting): a [ÇİÇEK], shown in 4 growth stages side by side — seed mound, small sprout with two leaves, budding stage, full bloom. Isolated on a plain solid cream background (#F5F0E4), centered, no text."
+**İzo zemin/dekor:** "...: a [VARLIK], drawn in isometric view, 45-degree angle from above, matching the ground perspective of the reference garden. Plain cream background, no text."
+**Sahne:** "...: [SAHNE TARİFİ]. Wide composition, plain cream background outside the diorama, no characters, no text."
 
-
-## ONBOARDING & UI GÖRSELLERİ (yaşayan liste — geliştirdikçe buraya eklenir)
-Referans akış: docs/bahce-onboarding-prototip.jsx
-
-### Kapak & anlatı
-26. KAPAK: olgun, ışıl ışıl "hedef bahçe" sahnesi (E1 kapı ekranı + mağaza görseli) — mevcut büyük bahçe kullanılabilir
-27. BAŞLANGIÇ bahçesi: aynı arsa, boş/mütevazı hali (onboarding sonu "işte bahçen")
-28. UYUYAN çiçek yakın plan: boynu bükük + 💤, şefkatli (güvence ekranı)
-29. Renk-aile tanıtım görselleri: sarı/kırmızı/mavi/mor/turuncu çiçek KÜMESİ, her renkten tek görsel (E2)
-
-### Kategori renk aileleri (çiçek setleri — her aileden 2-3 tür, 4 büyüme aşamalı)
-30. SARI (düzen & tertip): ayçiçeği ✓, papatya, sarı lale
-31. KIRMIZI (gelişim): gül, kırmızı lale, gerbera
-32. MAVİ (huzur & hareket): nilüfer, mavi kardelen, mavi yıldız çiçeği
-33. MOR (zihin & odak): lavanta, mor sümbül
-34. TURUNCU (minik işler): kadife çiçeği, turuncu gerbera
-
-### UI parçaları
-35. tohum kesesi ikonu 🌰 · para kesesi 🪙 · su damlası/depo göstergesi 💧
-36. haftalık sandık: kapalı + açılmış (ışık saçan) 2 hal
-37. dükkân raf arka planı (ahşap, sıcak)
-38. boş kare "ekim işareti" (toprakta ışıldayan yuva)
-39. kademe yıldızı/ışıltı parçacıkları (K3 tarhlar için)
-40. uygulama ikonu adayları: tek çiçekli minik ada, 2-3 varyasyon
+## İŞLEME HATTI
+Gemini'de üret → Claude'a/repoya gönder → arka plan temizlenir + kırpılır (scripts/sprite-temizle) → assets/bahce/[aile]/[ad]-[asama].png → kod bağlar → bu tabloda durum güncellenir.
