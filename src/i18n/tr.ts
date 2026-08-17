@@ -1,101 +1,78 @@
 // Tüm Türkçe kullanıcı metinleri burada yaşar — koda gömülmez (CLAUDE.md).
-// Suçluluk sözlüğü yasak: "kaçırdın", "başarısız", "seri bozuldu", "maalesef" kullanılmaz.
+// Suçluluk sözlüğü yasak: "kaçırdın", "başarısız", "seri bozuldu", "öldü" kullanılmaz.
 
 export const tr = {
   ortak: {
-    dokun: "dokun",
-    devam: "devam",
+    dokun: "DOKUN",
     geri: "geri",
-    tamam: "tamam",
-    vazgec: "vazgeç",
+    devam: "Devam",
   },
 
-  intro: {
-    birinciSatir: "gün ne kadar dolu olursa olsun,\niçinde küçük bir söz için yer vardır.",
-    ikinciBaslik: "burada kontrol sende.",
-    ikinciAciklama:
-      "neyi, ne zaman hatırlatacağımı sen seçersin.\nben usulca seslenirim — asla yormam.\nher \"yaptım\" bir kanıt, her kanıtta güneş doğar.",
+  onboarding: {
+    kapiBaslik: "Burası senin bahçen.",
+    kapiAlt: "Hayatını düzene soktukça, onun güzelleştiğini göreceksin.",
+
+    renkAlanBaslik: "Her çiçek, hayatının bir alanı.",
+    renkAlanDevami: "…ve daha fazlası",
+    renkAlanKapanis: "Sen onlara baktıkça, onlar açar.",
+
+    guvenceBaslik: "Bakamadığın gün\nçiçeğin ölmez — uyur.",
+    guvenceAlt: "Burada suçluluk yok, ceza yok, seri yok.\nDöndüğünde bahçen seni bekliyor olacak.",
+
+    kategoriBaslik: "Hangi alanlara bakmak istersin?",
+    kategoriAlt: "İster tek alana yoğunlaş, ister hepsine — bahçe senin.",
+    devamSayili: (n: number) => `Devam (${n} alan)`,
+    onizlemeBos: "alan seçtikçe burada açacak 🌱",
+
+    hediyeBaslik: "Hoş geldin hediyen 🌱",
+    hediyeAlt: "Seçtiğin her alandan bir tohum ektik bile — ilk filizlerin:",
+
+    nasilBaslik: "Bahçe böyle büyür:",
+    nasilSatirlar: [
+      ["🌙", "Günlük hedeflerini tamamla", "tohum kazan"],
+      ["💧", "Gün içindeki mini işleri yap", "o alanın çiçeği sulanır, büyür"],
+      ["🧺", "Olgunlaşınca topla", "kazandıklarınla bahçeni süsle"],
+    ],
+
+    sesBaslik: "Sana ne kadar sesleneyim?",
+    sesAlt: "Günlük tavan hep 5 — fazla ses, sesi görünmez yapar.",
+    sesSecenekleri: [
+      { id: "gunde1", metin: "Günde bir kez, yeter" },
+      { id: "gunde3", metin: "Ara sıra dürt — günde 2-3" },
+      { id: "hic", metin: "Hiç seslenme, ben gelirim" },
+    ],
+
+    bahcenBaslik: "İşte bahçen 🌱",
+    bahcenAlt: "İlk filizlerin seni bekliyor.\nKüçük bir işle sulamak ister misin?",
+    ilkGorev: "İlk görevimi göster",
+    sonraBakayim: "şimdilik bahçeme bakayım",
   },
 
-  kurulum: {
-    paketSoru: "ne hatırlatayım?",
+  bahce: {
+    kanit: (n: number) => `✓ ${n} kanıt`,
+    ekimIpucu: (ad: string) => `${ad} — boş kareye dokun`,
+    hasatIpucu: "olgun sebzeler parlar — dokun, topla",
+    bolgeKilidi: (fiyat: number) => `🔒 aç: ${fiyat} 🪙`,
+    bolgeAcildi: "bölge açıldı 🌿",
+    yeniTur: (ad: string) => `yeni: ${ad} 🌱`,
 
-    komutlarNot: "bildirimler bu komutlardan gelir — dokunup çıkarabilirsin",
-    komutlarNotBos: "kendi komutlarını yaz",
-    komutEklePlaceholder: "+ kendi komutunu yaz",
+    panelBugun: "bugün",
+    panelDukkan: "dükkân",
 
-    gunlerSoru: "hangi günler?",
-    gunlerNot: "istediğin kadar işaretle",
-    herGun: "her gün",
-
-    adetSoru: "günde kaç kez?",
-    adetNot: (tavan: number) => `günlük toplam tavan ${tavan} — fazla ses, sesi görünmez yapar`,
-    adetDigerPaketler: (n: number) => ` · diğer paketlerin ${n} hakkı kullanıyor`,
-    adetSecenek: (i: number) => `günde ${["bir", "iki", "üç", "dört", "beş"][i]} kez`,
-    tavanDolu: "bugünlük ses hakkın dolu — önce bir paketi sessize al.",
-
-    pencereSoru: "günün hangi aralığına?",
-    pencereEtiketleri: ["sabah · 08–12", "gün boyu · 09–21", "akşam · 18–23"],
-    gunBazliIstiyorum: "gün bazlı ayarlamak istiyorum",
-    gunBazliEtiket: "saatleri gün gün senin ayarınla",
-    pencereGunBaslik: "gün gün:",
-    pencereGunNot: "aralığa dokun, değişsin",
-
-    ozetHerGun: "her gün",
-    ozetSatir: (adet: number, pencereMetni: string, komutSayisi: number) =>
-      `günde ${adet} kez, ${pencereMetni} — ${komutSayisi} komuttan sırayla.`,
-    ozetPencereArasinda: (etiket: string) => `${etiket} arasında`,
-    ozetKanit: "her \"yaptım\" bir kanıt: güneş doğar, sayaç büyür.",
-    baslasin: "başlasın",
-  },
-
-  bugun: {
-    bugunSayaci: (bugun: number, toplam: number) => ` · bugün ${bugun} · toplam ${toplam} kanıt`,
-    hazirOldugunda: "hazır olduğunda.",
-    guzelGidiyor: "güzel gidiyor.",
-    kucukBirSey: "küçük bir şey:",
-    ikiDakikamVar: "iki dakikam var",
-    yaptim: "yaptım",
+    yaptim: "Yaptım",
+    ilkKanitEki: " (+1 ilk kanıt)",
     simdiOlmadi: "şimdi olmadı",
     sonraMesaji: "sorun yok — birazdan usulca yine sorarım.",
-    not: { kaynak: "Clear", metin: "her tekrar, o kişiye atılmış bir oydur." },
-    sesSatiri: "ara ara ben de seslenirim —\nsaatlerini dert etme, o benim işim.",
-  },
+    gorevYok: "bugünlük görev havuzu sakin — bahçen keyfine bakıyor.",
 
-  gecmis: {
-    baslik: "geçmiş",
-    altBaslik: (gun: number, kanit: number) => `son ${gun} gün · ${kanit} kanıt`,
-    solEtiket: "iki hafta önce",
-    sagEtiket: "bugün",
-    oran: (gun: number, dolu: number) => `${gun} günün ${dolu}'ünde en az bir kanıt bıraktın.`,
-    kapanis: "boş günler kayıp değil — sadece sessiz.",
-  },
-
-  paketler: {
-    baslik: "paketlerim",
-    sesSayaci: (kullanilan: number, tavan: number) => `günlük ses: ${kullanilan}/${tavan}`,
-    gundeAdet: (n: number) => `günde ${n}`,
-    sessizeAl: "sessize al",
-    sesiAc: "sesi aç",
-    yeniPaket: "+ yeni paket",
-  },
-
-  kimlik: {
-    baslik: "sen sözünü tutan\nbirisin.",
-    kanit: "kanıt",
-    altYazi: "her \"yaptım\" buraya bir güneş bıraktı",
-    bosIddia: "şimdilik bu bir iddia.\nbirlikte kanıta çevireceğiz.",
-    bosNot: "ilk kanıt için tek \"yaptım\" yeter.",
-    bugunGit: "bugüne git",
+    dukkanTohum: "🌰 tohumluk",
+    dukkanDekor: "🪙 dekor",
+    kilitliEsik: (mevcut: number, esik: number) => `🔒 ${mevcut}/${esik} kanıt`,
+    sandiktan: "sandıktan ✨",
+    sebzeKari: (n: number) => ` → +${n} 🪙`,
   },
 
   bildirim: {
     kanalAdi: "usulca sesler",
   },
-
-  alanlar: ["bugün", "geçmiş", "paketler", "kimlik"] as const,
-
-  // gün etiketleri: 0 = pazartesi ... 6 = pazar
-  gunKisa: ["pzt", "sal", "çar", "per", "cum", "cmt", "paz"],
-  gunAdlari: ["pazartesi", "salı", "çarşamba", "perşembe", "cuma", "cumartesi", "pazar"],
 } as const;
